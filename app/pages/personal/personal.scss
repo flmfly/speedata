@@ -1,0 +1,8 @@
+@import 'app.variables';
+
+.personal {
+  background: color($colors, light);
+  ion-item {
+    border:none;
+  }
+}

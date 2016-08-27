@@ -1,0 +1,58 @@
+
+.product {
+  background: #f4f4f4;
+
+  ion-card-content {
+    border-top: solid 1px #f4f4f4;
+    h2 {
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+  }
+
+  ion-grid {
+    padding-top: 8px;
+  }
+
+  ion-card {
+    width: 100%;
+  }
+
+  ion-col {
+    padding-top: 0;
+  }
+
+  button {
+    margin-top: 0;
+  }
+
+  .no-padding-bottom ion-col{
+    padding-bottom: 0;
+  }
+
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: color($colors, primary);
+  }
+
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: color($colors, primary);
+  }
+
+  ion-card-header {
+    color: map-get($colors, primary);
+  }
+}

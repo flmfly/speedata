@@ -1,0 +1,514 @@
+<!--
+  Generated template for the ProductDetailPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-segment [(ngModel)]="icons" *ngIf="segmentIsShown">
+      <ion-segment-button value="camera">
+        商品
+      </ion-segment-button>
+      <ion-segment-button value="bookmark">
+        规格参数
+      </ion-segment-button>
+    </ion-segment>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding class="product-detail">
+  <div>
+    <ion-slides pager style="height:auto;border-bottom: solid 1px #f4f4f4">
+      <ion-slide>
+        <img src="img/products/kt40.jpg"/>
+      </ion-slide>
+      <ion-slide>
+        <img src="img/products/kt40-1.jpg"/>
+      </ion-slide>
+      <ion-slide>
+        <img src="img/products/kt40-2.jpg"/>
+      </ion-slide>
+    </ion-slides>
+    <div padding>
+      <h4>
+        KT40Q手持终端（4G全网通）磁吸附充电/18mm超薄设计
+      </h4>
+      <p class="desc">
+        KT40Q是一款4G全网通的数据采集器，它采用时下流行的Android5.1操作系统，采用条码扫描跟RFID扫描的读写功能，在轻松运行快递物流，仓储盘点等管理信息功能，加快企业的发展，不仅如此，通过4G网络，它可以流畅的在无线网络进行数据传输。
+      </p>
+      <p>
+        ◆1.8mm超薄手持终端，镁铝合金材质，磁吸附充电功能，工业等级IP65；<br>
+        ◆思必拓自主研发生产，深圳富士康代加工，保证质量，稳定供货；<br>
+        ◆体积轻便小巧，便于携带，支持蓝牙无线打印，解决移动作业问题；<br>
+        ◆内置GPS模块，支持WIFI 、Bluetooth 、4G 等多种无线通讯功能；<br>
+        ◆4.0寸LCD大屏显示，视角清晰多种选配模块可根据您的需求定制；<br>
+        ◆标准配置1块4300mAh聚合物锂离子电池，座充可同时为10块电池充电；<br>
+        ◆能够支持各种条形码的扫描，并含有13.56MHz高频读取功能。
+      </p>
+    </div>
+  </div>
+  <div padding>
+    <table cellspacing="0" cellpadding="0">
+      <tbody>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext 1px solid; BORDER-RIGHT: windowtext 1px solid"
+          colspan="2"><span
+          style="FONT-FAMILY: 微软雅黑; COLOR: #ff0000; FONT-SIZE: 18px">KT40Q基本参数</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>CPU</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;Cortex-A53 1.5GHz 四核</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>操作系统</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;Android 5.1</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>RAM</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;1GB</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>ROM</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;8GB</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>存储扩展</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;MicroSDCard 兼容 128GB</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+          height="68" rowspan="2"><span>键盘</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;26键+电源键</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;LED键盘背光</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>电池容量</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;4300mAh，3.8V</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+          height="56"><span>充电方式</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;磁吸/USB专用充电器5V电压，1.2A电流 PCUSB充电0.5A电流智能识别PC及专用充电 器切换0.5A/1.2A充电电流</span>
+        </td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+          height="102" rowspan="3"><span>无线传输方式</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;1.Bluetooth V2.1+ EDR/ V3.0+ HS/ V4.1</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;2.WIFI 802.11 b/g/n/a 2.4G/5G</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;3.GPRS/EDGE/HSPA/CDMA2000 /TDD/FDD</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>通知方式</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;声音、震动、LED提示</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>音频</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;内置扬声器</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>尺寸</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;166mm*74mm*18mm&nbsp;</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>重量（含电池）</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;320g</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext 1px solid; BORDER-RIGHT: windowtext 1px solid"
+          colspan="2"><span style="FONT-FAMILY: 微软雅黑; COLOR: #ff0000; FONT-SIZE: 18px">整机性能</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+          height="68" rowspan="2"><span>工作温度</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;正常工作温度：-20℃ 至 50℃</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;低温电池：-30℃</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>存储温度</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;'-45℃ 至 +60℃</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>湿度</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;湿度5%至95%（无凝露）</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>防尘防水工业等级</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;IP65</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+          height="56"><span>跌落测试</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;在操作范围内，6面均可承受1.5米高度跌落到水泥地面的冲击</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>滚动测试</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;滚动规格 1000次0.5米，6个接触面滚动</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>静电放电（ESD）</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;±15kV 空气放电，±8kV 直接放电</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext 1px solid; BORDER-RIGHT: windowtext 1px solid"
+          colspan="2"><span style="FONT-FAMILY: 微软雅黑; COLOR: #ff0000; FONT-SIZE: 18px">摄像头</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>像素</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid">
+          <span>&nbsp;800万有效光学像素</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>对焦方式</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid">
+          <span>&nbsp;自动对焦</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>闪光灯</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: white; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid">
+          <span>&nbsp;支持闪光灯、支持手电筒</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext 1px solid; BORDER-RIGHT: windowtext 1px solid"
+          colspan="2"><span style="FONT-FAMILY: 微软雅黑; COLOR: #ff0000; FONT-SIZE: 18px">显示屏幕</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp; 显示屏</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;4.0” 高清，高亮全视角LCD</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp; 显示屏分辨率</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;分辨率480×800</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp; 触摸屏类型</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;电容触摸屏</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp; 背光照明</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;LED背光</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext 1px solid; BORDER-RIGHT: windowtext 1px solid"
+          colspan="2"><span style="FONT-FAMILY: 微软雅黑; COLOR: #ff0000; FONT-SIZE: 18px">通讯模块</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>手持制式</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid">
+          <span>&nbsp;双卡双待、4G全网通</span></td>
+      </tr>
+      <tr style="HEIGHT: 58px" height="58">
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+          height="228" rowspan="6"><span>通讯模块</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;4G&nbsp;&nbsp;TDD-LTE : 1900/2300/2500/2600 MHz(B38/B39/B40/B41)</span>
+        </td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;4G&nbsp;&nbsp;FDD-LTE : 1800/2100/2600 MHz&nbsp;(B1/B3/B7)&nbsp;</span>
+        </td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;3G&nbsp;TD-SCDMA:&nbsp;1900/2100 MHZ&nbsp;(B34 B39 )</span>
+        </td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span
+        >&nbsp;3G&nbsp;WCDMA:850/900/1900/2100 MHz(B1 B2 B5 B8)</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span
+        >&nbsp;2G&nbsp;GSM:850/900/1800/1900 Mhz(B2 B3 B5 B8)</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;CDMA&amp;EVDO:&nbsp;800 MHz(BC0)</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+          height="265" rowspan="7"><span>通讯速度</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;FDD: 下行 150Mbps&nbsp; 上行 50Mbps</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;TDD: 下行 150Mbps&nbsp; 上行 50Mbps</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span
+        >&nbsp;WCDMA HSDPA: 下行 42.2Mbps&nbsp; 上行 11.5Mbps</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;TD-SCDMA: 下行 384Kbps&nbsp; 上行 384Kbps</span>
+        </td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;TD-HSDPA: 下行 2.2Mbps&nbsp; 上行 2.8Mbps</span>
+        </td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;CDMA2000 1xRTT ： 153.6Kbps&nbsp;&nbsp;</span>
+        </td>
+      </tr>
+      <tr style="HEIGHT: 61px" height="61">
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+          height="61"><span>&nbsp;CDMA2000 HRPD/1xEV-DO ： 正向链路3.1Mbps&nbsp; 反向链路1.8Mbps</span>
+        </td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+          colspan="2"><span style="FONT-FAMILY: 微软雅黑; COLOR: #ff0000; FONT-SIZE: 18px">可扩展性</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+          height="68" rowspan="2"><span>物理接口</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;Micros SD/TF卡槽，SIM卡槽，（PSAM选配）</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;Micro USB接口，耳机接口</span></td>
+      </tr>
+      <tr style="HEIGHT: 162px" height="162">
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+          height="516" rowspan="3"><span>条码扫描<br>支持条码型号</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>SE955：Code128, UCC/EAN-128, AIM 128, ISBT 128, ITF-6, ITF-14, Deutsche 14,&nbsp;&nbsp; Deutsche 12, COOP 25（Japanese Matrix 25）, Matrix 25(European Matrix 25),&nbsp;&nbsp;&nbsp; Industrial 25, Standard 25, Code 39, Code 11, , Code 93, Plessey, MSI-Plessey, GS1 Databar, EAN-13, EAN-8, UPC-A, UPC-E, Codabar, Interleaved 2 of 5,&nbsp; ISBN/ISSN</span>
+        </td>
+      </tr>
+      <tr style="HEIGHT: 166px" height="166">
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+          height="166"><span>N4313:Code128, UCC/EAN-128, AIM 128, ISBT 128, ITF-6, ITF-14, Deutsche 14, Deutsche 12, COOP 25（Japanese Matrix 25）, Matrix 25(European Matrix 25), Industrial 25, Standard 25, Code 39, Code 11, , Code 93, Plessey, MSI-Plessey, GS1 Databar, EAN-13, EAN-8, UPC-A, UPC-E, Codabar, Interleaved 2 of 5, ISBN/ISSN</span>
+        </td>
+      </tr>
+      <tr style="HEIGHT: 188px" height="188">
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+          height="188"><span>SE45SR：一维：Code128, UCC/EAN-128, AIM 128, ISBT 128, ITF-6, ITF-14, Deutsche 14, Deutsche 12, COOP 25（Japanese Matrix 25）, Matrix 25(European Matrix 25), Industrial 25, Standard 25, Code 39, Code 11, , Code 93, Plessey, MSI-Plessey, GS1 Databar, EAN-13, EAN-8, UPC-A, UPC-E, Codabar, Interleaved 2 of 5, ISBN/ISSN&nbsp;&nbsp; 二维：PDF417, MicroPDF417, Composite, RSS, TLC-39, Datamatrix, QR code, Micro QR code, Aztec, MaxiCode&nbsp; 邮政编码：US PostNet, US Planet, 英国邮政, 澳大利亚邮政, 日本邮政，荷兰邮政 (KIX)<br></span>
+        </td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>条码识读距离</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;5cm-40cm 根据条码尺寸</span></td>
+      </tr>
+      <tr style="HEIGHT: 47px" height="47">
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+          height="47"><span>RFID读写模块</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;频率：13.56MHz 读写&nbsp; 支持协议：14443A，15693，NFC&nbsp;&nbsp; 读取距离：0cm-5cm</span>
+        </td>
+      </tr>
+      <tr style="HEIGHT: 50px" height="50">
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+          height="50"><span>GPS定位模块</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;GPS，AGPS，BEIDOU&nbsp;&nbsp; 定位精度 &lt; 10米&nbsp;&nbsp;&nbsp;&nbsp; 定位时间 &lt; 40s</span>
+        </td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext 1px solid; BORDER-RIGHT: windowtext 1px solid"
+          colspan="2"><span style="FONT-FAMILY: 微软雅黑; COLOR: #ff0000; FONT-SIZE: 18px">配置</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>标准配件</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;USB数据线、专用磁吸线、专用充电适配器、单电池</span></td>
+      </tr>
+      <tr>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext 1px solid; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>自选配件</span></td>
+        <td
+          style="BORDER-BOTTOM: windowtext 1px solid; BORDER-LEFT: windowtext; BACKGROUND-COLOR: transparent; BORDER-TOP: windowtext; BORDER-RIGHT: windowtext 1px solid"
+        ><span>&nbsp;备用电池、充电底座、腕带</span></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</ion-content>
+
+<ion-footer class="product-detail" *ngIf="footerIsShown">
+  <ion-row no-padding>
+    <ion-col width-50 no-padding>
+      <button clear full no-margin class="border-top-grey" (click)="nav2Prototype()">
+        申请样机
+      </button>
+    </ion-col>
+    <ion-col width-50 no-padding>
+      <button favorite full no-margin (click)="nav2Order()">
+        <ion-icon name="buy"></ion-icon>
+        立即购买
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

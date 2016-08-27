@@ -1,0 +1,53 @@
+<!--
+  Generated template for the PrototypeListPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>样机订单</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding class="order-list">
+  <ion-list>
+    <ion-item-sliding>
+      <button ion-item (click)="nav2OrderDetail()">
+        <ion-thumbnail item-left>
+          <img src="img/products/kt40.jpg">
+        </ion-thumbnail>
+        <h2>KT40Q手持终端反对撒发的顺丰撒放大舒服的</h2>
+        <p>共1件</p>
+        <ion-note item-right>运输中</ion-note>
+      </button>
+      <ion-item-options side="left">
+        <button primary>
+          <ion-icon name="text"></ion-icon>
+          Text
+        </button>
+        <button secondary>
+          <ion-icon name="call"></ion-icon>
+          Call
+        </button>
+      </ion-item-options>
+      <ion-item-options side="right">
+        <button primary>
+          取消
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+    <button ion-item (click)="nav2OrderDetail()">
+      <ion-thumbnail item-left>
+        <img src="img/products/kt45.jpg">
+      </ion-thumbnail>
+      <h2>KT45Q手持终端</h2>
+      <p>共1件</p>
+      <ion-note item-right>已完成</ion-note>
+    </button>
+  </ion-list>
+
+</ion-content>

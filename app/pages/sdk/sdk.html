@@ -1,0 +1,51 @@
+<!--
+  Generated template for the SdkPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>SDK下载</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding class="sdk">
+
+  <div class="download-icon">
+    <ion-icon name="download-outline" primary></ion-icon>
+    <h6 padding style="padding-top: 0;margin-top: 0">
+      亲,请选择一个产品型号并留下邮箱。<br>SDK将自动发送到您的邮箱!
+    </h6>
+  </div>
+
+  <ion-list style="margin-bottom: 16px">
+    <ion-item>
+      <ion-label>产品型号</ion-label>
+      <ion-select>
+        <ion-option>KT40</ion-option>
+        <ion-option>KT45</ion-option>
+        <ion-option>KT80</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label primary stacked>邮箱</ion-label>
+      <ion-input placeholder="请填写您的邮箱"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <div padding style="padding-top: 0">
+    <button block outline no-margin>
+      提交下载
+    </button>
+  </div>
+  <div padding style="padding-top: 0">
+  <button block favorite no-margin>
+    <ion-icon name="call-outline"></ion-icon>400-8888-8888
+  </button>
+  </div>
+
+</ion-content>

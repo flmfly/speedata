@@ -1,0 +1,7 @@
+.order-detail {
+  background: map_get($colors, light);
+  ion-note {
+    color: map_get($colors, favorite);
+  }
+
+}

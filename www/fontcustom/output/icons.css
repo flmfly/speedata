@@ -1,0 +1,101 @@
+/*
+  Icon Font: icons
+*/
+
+@font-face {
+  font-family: "icons";
+  src: url("./icons_7a128982fe13f462c09b48e390450839.eot");
+  src: url("./icons_7a128982fe13f462c09b48e390450839.eot?#iefix") format("embedded-opentype"),
+       url("./icons_7a128982fe13f462c09b48e390450839.woff") format("woff"),
+       url("./icons_7a128982fe13f462c09b48e390450839.ttf") format("truetype"),
+       url("./icons_7a128982fe13f462c09b48e390450839.svg#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "icons";
+    src: url("./icons_7a128982fe13f462c09b48e390450839.svg#icons") format("svg");
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.ion-ios-assistant:before,
+.ion-ios-assistant-outline:before,
+.ion-ios-buy:before,
+.ion-ios-clipboard:before,
+.ion-ios-clock:before,
+.ion-ios-company:before,
+.ion-ios-connection:before,
+.ion-ios-delete:before,
+.ion-ios-delivery:before,
+.ion-ios-download-outline:before,
+.ion-ios-enquiry:before,
+.ion-ios-enquiry-outline:before,
+.ion-ios-explosion:before,
+.ion-ios-fingerprint:before,
+.ion-ios-infrared:before,
+.ion-ios-medal:before,
+.ion-ios-oem:before,
+.ion-ios-pda:before,
+.ion-ios-pda-outline:before,
+.ion-ios-print:before,
+.ion-ios-rfid:before,
+.ion-ios-scanner:before,
+.ion-ios-screen-size:before,
+.ion-ios-sdk:before,
+.ion-ios-select:before,
+.ion-ios-temperature:before,
+.ion-ios-today:before,
+.ion-ios-user:before,
+.ion-ios-user-outline:before,
+.ion-ios-wifi:before,
+.ion-md-pda:before {
+  display: inline-block;
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.ion-ios-assistant:before { content: "\f100"; }
+.ion-ios-assistant-outline:before { content: "\f101"; }
+.ion-ios-buy:before { content: "\f102"; }
+.ion-ios-clipboard:before { content: "\f11b"; }
+.ion-ios-clock:before { content: "\f11c"; }
+.ion-ios-company:before { content: "\f103"; }
+.ion-ios-connection:before { content: "\f104"; }
+.ion-ios-delete:before { content: "\f105"; }
+.ion-ios-delivery:before { content: "\f11d"; }
+.ion-ios-download-outline:before { content: "\f106"; }
+.ion-ios-enquiry:before { content: "\f107"; }
+.ion-ios-enquiry-outline:before { content: "\f108"; }
+.ion-ios-explosion:before { content: "\f109"; }
+.ion-ios-fingerprint:before { content: "\f10a"; }
+.ion-ios-infrared:before { content: "\f10b"; }
+.ion-ios-medal:before { content: "\f10c"; }
+.ion-ios-oem:before { content: "\f10d"; }
+.ion-ios-pda:before { content: "\f10e"; }
+.ion-ios-pda-outline:before { content: "\f10f"; }
+.ion-ios-print:before { content: "\f110"; }
+.ion-ios-rfid:before { content: "\f111"; }
+.ion-ios-scanner:before { content: "\f112"; }
+.ion-ios-screen-size:before { content: "\f113"; }
+.ion-ios-sdk:before { content: "\f114"; }
+.ion-ios-select:before { content: "\f115"; }
+.ion-ios-temperature:before { content: "\f116"; }
+.ion-ios-today:before { content: "\f11e"; }
+.ion-ios-user:before { content: "\f117"; }
+.ion-ios-user-outline:before { content: "\f118"; }
+.ion-ios-wifi:before { content: "\f119"; }
+.ion-md-pda:before { content: "\f11a"; }

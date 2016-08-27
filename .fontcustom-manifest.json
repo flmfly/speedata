@@ -1,0 +1,170 @@
+{
+  "checksum": {
+    "previous": "7a128982fe13f462c09b48e390450839b259f656f673ad5b0d24fd757ba02643",
+    "current": "7a128982fe13f462c09b48e390450839b259f656f673ad5b0d24fd757ba02643"
+  },
+  "fonts": [
+    "./www/fontcustom/output/icons_7a128982fe13f462c09b48e390450839.ttf",
+    "./www/fontcustom/output/icons_7a128982fe13f462c09b48e390450839.svg",
+    "./www/fontcustom/output/icons_7a128982fe13f462c09b48e390450839.woff",
+    "./www/fontcustom/output/icons_7a128982fe13f462c09b48e390450839.eot"
+  ],
+  "glyphs": {
+    "ios-assistant": {
+      "codepoint": 61696,
+      "source": "./fontcustom/input/ios-assistant.svg"
+    },
+    "ios-assistant-outline": {
+      "codepoint": 61697,
+      "source": "./fontcustom/input/ios-assistant-outline.svg"
+    },
+    "ios-buy": {
+      "codepoint": 61698,
+      "source": "./fontcustom/input/ios-buy.svg"
+    },
+    "ios-clipboard": {
+      "codepoint": 61723,
+      "source": "./fontcustom/input/ios-clipboard.svg"
+    },
+    "ios-clock": {
+      "codepoint": 61724,
+      "source": "./fontcustom/input/ios-clock.svg"
+    },
+    "ios-company": {
+      "codepoint": 61699,
+      "source": "./fontcustom/input/ios-company.svg"
+    },
+    "ios-connection": {
+      "codepoint": 61700,
+      "source": "./fontcustom/input/ios-connection.svg"
+    },
+    "ios-delete": {
+      "codepoint": 61701,
+      "source": "./fontcustom/input/ios-delete.svg"
+    },
+    "ios-delivery": {
+      "codepoint": 61725,
+      "source": "./fontcustom/input/ios-delivery.svg"
+    },
+    "ios-download-outline": {
+      "codepoint": 61702,
+      "source": "./fontcustom/input/ios-download-outline.svg"
+    },
+    "ios-enquiry": {
+      "codepoint": 61703,
+      "source": "./fontcustom/input/ios-enquiry.svg"
+    },
+    "ios-enquiry-outline": {
+      "codepoint": 61704,
+      "source": "./fontcustom/input/ios-enquiry-outline.svg"
+    },
+    "ios-explosion": {
+      "codepoint": 61705,
+      "source": "./fontcustom/input/ios-explosion.svg"
+    },
+    "ios-fingerprint": {
+      "codepoint": 61706,
+      "source": "./fontcustom/input/ios-fingerprint.svg"
+    },
+    "ios-infrared": {
+      "codepoint": 61707,
+      "source": "./fontcustom/input/ios-infrared.svg"
+    },
+    "ios-medal": {
+      "codepoint": 61708,
+      "source": "./fontcustom/input/ios-medal.svg"
+    },
+    "ios-oem": {
+      "codepoint": 61709,
+      "source": "./fontcustom/input/ios-oem.svg"
+    },
+    "ios-pda": {
+      "codepoint": 61710,
+      "source": "./fontcustom/input/ios-pda.svg"
+    },
+    "ios-pda-outline": {
+      "codepoint": 61711,
+      "source": "./fontcustom/input/ios-pda-outline.svg"
+    },
+    "ios-print": {
+      "codepoint": 61712,
+      "source": "./fontcustom/input/ios-print.svg"
+    },
+    "ios-rfid": {
+      "codepoint": 61713,
+      "source": "./fontcustom/input/ios-rfid.svg"
+    },
+    "ios-scanner": {
+      "codepoint": 61714,
+      "source": "./fontcustom/input/ios-scanner.svg"
+    },
+    "ios-screen-size": {
+      "codepoint": 61715,
+      "source": "./fontcustom/input/ios-screen-size.svg"
+    },
+    "ios-sdk": {
+      "codepoint": 61716,
+      "source": "./fontcustom/input/ios-sdk.svg"
+    },
+    "ios-select": {
+      "codepoint": 61717,
+      "source": "./fontcustom/input/ios-select.svg"
+    },
+    "ios-temperature": {
+      "codepoint": 61718,
+      "source": "./fontcustom/input/ios-temperature.svg"
+    },
+    "ios-today": {
+      "codepoint": 61726,
+      "source": "./fontcustom/input/ios-today.svg"
+    },
+    "ios-user": {
+      "codepoint": 61719,
+      "source": "./fontcustom/input/ios-user.svg"
+    },
+    "ios-user-outline": {
+      "codepoint": 61720,
+      "source": "./fontcustom/input/ios-user-outline.svg"
+    },
+    "ios-wifi": {
+      "codepoint": 61721,
+      "source": "./fontcustom/input/ios-wifi.svg"
+    },
+    "md-pda": {
+      "codepoint": 61722,
+      "source": "./fontcustom/input/md-pda.svg"
+    }
+  },
+  "options": {
+    "autowidth": false,
+    "config": "fontcustom.yml",
+    "css_selector": ".ion-{{glyph}}",
+    "debug": false,
+    "font_ascent": 448,
+    "font_descent": 64,
+    "font_design_size": 16,
+    "font_em": 512,
+    "font_name": "icons",
+    "force": false,
+    "input": {
+      "templates": "./fontcustom/input",
+      "vectors": "./fontcustom/input"
+    },
+    "no_hash": false,
+    "output": {
+      "css": "./www/fontcustom/output",
+      "fonts": "./www/fontcustom/output",
+      "preview": "./www/fontcustom/output"
+    },
+    "preprocessor_path": null,
+    "quiet": false,
+    "templates": [
+      "css",
+      "preview"
+    ]
+  },
+  "templates": [
+    "./www/fontcustom/output/icons.css",
+    "./www/fontcustom/output/icons-preview.html"
+  ]
+}

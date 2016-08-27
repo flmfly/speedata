@@ -1,0 +1,46 @@
+<!--
+  Generated template for the OrderDetailPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>订单详细</ion-title>
+    <ion-buttons end>
+      <button block>取消订单</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding class="order-detail">
+  <ion-list>
+    <ion-item>
+      <h2>订单号:212112121212121</h2>
+      <ion-note item-right>完成</ion-note>
+    </ion-item>
+    <button ion-item (click)="nav2OrderStatus()">
+      <ion-icon name=""></ion-icon>订单状态跟踪
+    </button>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <h2>
+        <ion-icon name=""></ion-icon>李先生&nbsp;&nbsp;&nbsp;&nbsp;136****0942
+      </h2>
+      <p>北京市海淀区上地西路43号</p>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item (click)="nav2PrototypeDetail()">
+      <ion-thumbnail item-left>
+        <img src="img/products/kt40.jpg">
+      </ion-thumbnail>
+      <h2>KT40Q手持终端反对撒发的顺丰撒放大舒服的</h2>
+      <p>共1件&nbsp;&nbsp;&nbsp;&nbsp;共计888元</p>
+    </ion-item>
+    </ion-list>
+</ion-content>

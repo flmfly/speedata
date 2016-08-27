@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>icons glyphs preview</title>
+
+    <style>
+      /* Page Styles */
+
+      * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #fff;
+        color: #444;
+        font: 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+
+      a,
+      a:visited {
+        color: #888;
+        text-decoration: underline;
+      }
+      a:hover,
+      a:focus { color: #000; }
+
+      header {
+        border-bottom: 2px solid #ddd;
+        margin-bottom: 20px;
+        overflow: hidden;
+        padding: 20px 0;
+      }
+
+      header h1 {
+        color: #888;
+        float: left;
+        font-size: 36px;
+        font-weight: 300;
+      }
+
+      header a {
+        float: right;
+        font-size: 14px;
+      }
+
+      .container {
+        margin: 0 auto;
+        max-width: 1200px;
+        min-width: 960px;
+        padding: 0 40px;
+        width: 90%;
+      }
+
+      .glyph {
+        border-bottom: 1px dotted #ccc;
+        padding: 10px 0 20px;
+        margin-bottom: 20px;
+      }
+
+      .preview-glyphs { vertical-align: bottom; }
+
+      .preview-scale {
+        color: #888;
+        font-size: 12px;
+        margin-top: 5px;
+      }
+
+      .step {
+        display: inline-block;
+        line-height: 1;
+        position: relative;
+        width: 10%;
+      }
+
+      .step .letters,
+      .step i {
+        -webkit-transition: opacity .3s;
+        -moz-transition: opacity .3s;
+        -ms-transition: opacity .3s;
+        -o-transition: opacity .3s;
+        transition: opacity .3s;
+      }
+
+      .step:hover .letters { opacity: 1; }
+      .step:hover i { opacity: .3; }
+
+      .letters {
+        opacity: .3;
+        position: absolute;
+      }
+
+      .characters-off .letters { display: none; }
+      .characters-off .step:hover i { opacity: 1; }
+
+      
+      .size-12 { font-size: 12px; }
+      
+      .size-14 { font-size: 14px; }
+      
+      .size-16 { font-size: 16px; }
+      
+      .size-18 { font-size: 18px; }
+      
+      .size-21 { font-size: 21px; }
+      
+      .size-24 { font-size: 24px; }
+      
+      .size-36 { font-size: 36px; }
+      
+      .size-48 { font-size: 48px; }
+      
+      .size-60 { font-size: 60px; }
+      
+      .size-72 { font-size: 72px; }
+      
+
+      .usage { margin-top: 10px; }
+
+      .usage input {
+        font-family: monospace;
+        margin-right: 3px;
+        padding: 2px 5px;
+        text-align: center;
+      }
+
+      .usage .point { width: 150px; }
+
+      .usage .class { width: 250px; }
+
+      footer {
+        color: #888;
+        font-size: 12px;
+        padding: 20px 0;
+      }
+
+      /* Icon Font: icons */
+
+      @font-face {
+  font-family: "icons";
+  src: url("./icons_7a128982fe13f462c09b48e390450839.eot");
+  src: url("./icons_7a128982fe13f462c09b48e390450839.eot?#iefix") format("embedded-opentype"),
+       url("./icons_7a128982fe13f462c09b48e390450839.woff") format("woff"),
+       url("./icons_7a128982fe13f462c09b48e390450839.ttf") format("truetype"),
+       url("./icons_7a128982fe13f462c09b48e390450839.svg#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "icons";
+    src: url("./icons_7a128982fe13f462c09b48e390450839.svg#icons") format("svg");
+  }
+}
+
+      [data-icon]:before { content: attr(data-icon); }
+
+      [data-icon]:before,
+      .ion-ios-assistant:before,
+.ion-ios-assistant-outline:before,
+.ion-ios-buy:before,
+.ion-ios-clipboard:before,
+.ion-ios-clock:before,
+.ion-ios-company:before,
+.ion-ios-connection:before,
+.ion-ios-delete:before,
+.ion-ios-delivery:before,
+.ion-ios-download-outline:before,
+.ion-ios-enquiry:before,
+.ion-ios-enquiry-outline:before,
+.ion-ios-explosion:before,
+.ion-ios-fingerprint:before,
+.ion-ios-infrared:before,
+.ion-ios-medal:before,
+.ion-ios-oem:before,
+.ion-ios-pda:before,
+.ion-ios-pda-outline:before,
+.ion-ios-print:before,
+.ion-ios-rfid:before,
+.ion-ios-scanner:before,
+.ion-ios-screen-size:before,
+.ion-ios-sdk:before,
+.ion-ios-select:before,
+.ion-ios-temperature:before,
+.ion-ios-today:before,
+.ion-ios-user:before,
+.ion-ios-user-outline:before,
+.ion-ios-wifi:before,
+.ion-md-pda:before {
+        display: inline-block;
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+      }
+
+      .ion-ios-assistant:before { content: "\f100"; }
+.ion-ios-assistant-outline:before { content: "\f101"; }
+.ion-ios-buy:before { content: "\f102"; }
+.ion-ios-clipboard:before { content: "\f11b"; }
+.ion-ios-clock:before { content: "\f11c"; }
+.ion-ios-company:before { content: "\f103"; }
+.ion-ios-connection:before { content: "\f104"; }
+.ion-ios-delete:before { content: "\f105"; }
+.ion-ios-delivery:before { content: "\f11d"; }
+.ion-ios-download-outline:before { content: "\f106"; }
+.ion-ios-enquiry:before { content: "\f107"; }
+.ion-ios-enquiry-outline:before { content: "\f108"; }
+.ion-ios-explosion:before { content: "\f109"; }
+.ion-ios-fingerprint:before { content: "\f10a"; }
+.ion-ios-infrared:before { content: "\f10b"; }
+.ion-ios-medal:before { content: "\f10c"; }
+.ion-ios-oem:before { content: "\f10d"; }
+.ion-ios-pda:before { content: "\f10e"; }
+.ion-ios-pda-outline:before { content: "\f10f"; }
+.ion-ios-print:before { content: "\f110"; }
+.ion-ios-rfid:before { content: "\f111"; }
+.ion-ios-scanner:before { content: "\f112"; }
+.ion-ios-screen-size:before { content: "\f113"; }
+.ion-ios-sdk:before { content: "\f114"; }
+.ion-ios-select:before { content: "\f115"; }
+.ion-ios-temperature:before { content: "\f116"; }
+.ion-ios-today:before { content: "\f11e"; }
+.ion-ios-user:before { content: "\f117"; }
+.ion-ios-user-outline:before { content: "\f118"; }
+.ion-ios-wifi:before { content: "\f119"; }
+.ion-md-pda:before { content: "\f11a"; }
+    </style>
+
+    <!--[if lte IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script>
+      function toggleCharacters() {
+        var body = document.getElementsByTagName('body')[0];
+        body.className = body.className === 'characters-off' ? '' : 'characters-off';
+      }
+    </script>
+  </head>
+
+  <body class="characters-off">
+    <div id="page" class="container">
+      <header>
+        <h1>icons contains 31 glyphs:</h1>
+        <a onclick="toggleCharacters(); return false;" href="#">Toggle Preview Characters</a>
+      </header>
+
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-assistant" class="ion-ios-assistant"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-assistant" class="ion-ios-assistant"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-assistant" class="ion-ios-assistant"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-assistant" class="ion-ios-assistant"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-assistant" class="ion-ios-assistant"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-assistant" class="ion-ios-assistant"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-assistant" class="ion-ios-assistant"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-assistant" class="ion-ios-assistant"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-assistant" class="ion-ios-assistant"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-assistant" class="ion-ios-assistant"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-assistant" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf100;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-assistant-outline" class="ion-ios-assistant-outline"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-assistant-outline" class="ion-ios-assistant-outline"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-assistant-outline" class="ion-ios-assistant-outline"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-assistant-outline" class="ion-ios-assistant-outline"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-assistant-outline" class="ion-ios-assistant-outline"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-assistant-outline" class="ion-ios-assistant-outline"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-assistant-outline" class="ion-ios-assistant-outline"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-assistant-outline" class="ion-ios-assistant-outline"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-assistant-outline" class="ion-ios-assistant-outline"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-assistant-outline" class="ion-ios-assistant-outline"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-assistant-outline" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf101;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-buy" class="ion-ios-buy"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-buy" class="ion-ios-buy"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-buy" class="ion-ios-buy"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-buy" class="ion-ios-buy"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-buy" class="ion-ios-buy"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-buy" class="ion-ios-buy"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-buy" class="ion-ios-buy"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-buy" class="ion-ios-buy"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-buy" class="ion-ios-buy"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-buy" class="ion-ios-buy"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-buy" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf102;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-clipboard" class="ion-ios-clipboard"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-clipboard" class="ion-ios-clipboard"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-clipboard" class="ion-ios-clipboard"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-clipboard" class="ion-ios-clipboard"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-clipboard" class="ion-ios-clipboard"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-clipboard" class="ion-ios-clipboard"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-clipboard" class="ion-ios-clipboard"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-clipboard" class="ion-ios-clipboard"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-clipboard" class="ion-ios-clipboard"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-clipboard" class="ion-ios-clipboard"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-clipboard" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf11b;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-clock" class="ion-ios-clock"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-clock" class="ion-ios-clock"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-clock" class="ion-ios-clock"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-clock" class="ion-ios-clock"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-clock" class="ion-ios-clock"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-clock" class="ion-ios-clock"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-clock" class="ion-ios-clock"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-clock" class="ion-ios-clock"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-clock" class="ion-ios-clock"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-clock" class="ion-ios-clock"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-clock" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf11c;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-company" class="ion-ios-company"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-company" class="ion-ios-company"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-company" class="ion-ios-company"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-company" class="ion-ios-company"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-company" class="ion-ios-company"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-company" class="ion-ios-company"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-company" class="ion-ios-company"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-company" class="ion-ios-company"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-company" class="ion-ios-company"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-company" class="ion-ios-company"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-company" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf103;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-connection" class="ion-ios-connection"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-connection" class="ion-ios-connection"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-connection" class="ion-ios-connection"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-connection" class="ion-ios-connection"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-connection" class="ion-ios-connection"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-connection" class="ion-ios-connection"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-connection" class="ion-ios-connection"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-connection" class="ion-ios-connection"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-connection" class="ion-ios-connection"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-connection" class="ion-ios-connection"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-connection" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf104;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-delete" class="ion-ios-delete"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-delete" class="ion-ios-delete"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-delete" class="ion-ios-delete"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-delete" class="ion-ios-delete"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-delete" class="ion-ios-delete"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-delete" class="ion-ios-delete"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-delete" class="ion-ios-delete"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-delete" class="ion-ios-delete"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-delete" class="ion-ios-delete"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-delete" class="ion-ios-delete"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-delete" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf105;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-delivery" class="ion-ios-delivery"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-delivery" class="ion-ios-delivery"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-delivery" class="ion-ios-delivery"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-delivery" class="ion-ios-delivery"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-delivery" class="ion-ios-delivery"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-delivery" class="ion-ios-delivery"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-delivery" class="ion-ios-delivery"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-delivery" class="ion-ios-delivery"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-delivery" class="ion-ios-delivery"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-delivery" class="ion-ios-delivery"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-delivery" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf11d;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-download-outline" class="ion-ios-download-outline"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-download-outline" class="ion-ios-download-outline"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-download-outline" class="ion-ios-download-outline"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-download-outline" class="ion-ios-download-outline"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-download-outline" class="ion-ios-download-outline"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-download-outline" class="ion-ios-download-outline"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-download-outline" class="ion-ios-download-outline"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-download-outline" class="ion-ios-download-outline"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-download-outline" class="ion-ios-download-outline"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-download-outline" class="ion-ios-download-outline"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-download-outline" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf106;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-enquiry" class="ion-ios-enquiry"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-enquiry" class="ion-ios-enquiry"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-enquiry" class="ion-ios-enquiry"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-enquiry" class="ion-ios-enquiry"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-enquiry" class="ion-ios-enquiry"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-enquiry" class="ion-ios-enquiry"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-enquiry" class="ion-ios-enquiry"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-enquiry" class="ion-ios-enquiry"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-enquiry" class="ion-ios-enquiry"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-enquiry" class="ion-ios-enquiry"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-enquiry" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf107;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-enquiry-outline" class="ion-ios-enquiry-outline"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-enquiry-outline" class="ion-ios-enquiry-outline"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-enquiry-outline" class="ion-ios-enquiry-outline"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-enquiry-outline" class="ion-ios-enquiry-outline"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-enquiry-outline" class="ion-ios-enquiry-outline"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-enquiry-outline" class="ion-ios-enquiry-outline"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-enquiry-outline" class="ion-ios-enquiry-outline"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-enquiry-outline" class="ion-ios-enquiry-outline"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-enquiry-outline" class="ion-ios-enquiry-outline"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-enquiry-outline" class="ion-ios-enquiry-outline"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-enquiry-outline" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf108;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-explosion" class="ion-ios-explosion"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-explosion" class="ion-ios-explosion"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-explosion" class="ion-ios-explosion"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-explosion" class="ion-ios-explosion"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-explosion" class="ion-ios-explosion"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-explosion" class="ion-ios-explosion"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-explosion" class="ion-ios-explosion"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-explosion" class="ion-ios-explosion"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-explosion" class="ion-ios-explosion"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-explosion" class="ion-ios-explosion"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-explosion" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf109;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-fingerprint" class="ion-ios-fingerprint"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-fingerprint" class="ion-ios-fingerprint"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-fingerprint" class="ion-ios-fingerprint"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-fingerprint" class="ion-ios-fingerprint"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-fingerprint" class="ion-ios-fingerprint"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-fingerprint" class="ion-ios-fingerprint"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-fingerprint" class="ion-ios-fingerprint"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-fingerprint" class="ion-ios-fingerprint"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-fingerprint" class="ion-ios-fingerprint"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-fingerprint" class="ion-ios-fingerprint"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-fingerprint" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf10a;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-infrared" class="ion-ios-infrared"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-infrared" class="ion-ios-infrared"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-infrared" class="ion-ios-infrared"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-infrared" class="ion-ios-infrared"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-infrared" class="ion-ios-infrared"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-infrared" class="ion-ios-infrared"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-infrared" class="ion-ios-infrared"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-infrared" class="ion-ios-infrared"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-infrared" class="ion-ios-infrared"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-infrared" class="ion-ios-infrared"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-infrared" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf10b;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-medal" class="ion-ios-medal"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-medal" class="ion-ios-medal"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-medal" class="ion-ios-medal"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-medal" class="ion-ios-medal"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-medal" class="ion-ios-medal"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-medal" class="ion-ios-medal"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-medal" class="ion-ios-medal"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-medal" class="ion-ios-medal"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-medal" class="ion-ios-medal"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-medal" class="ion-ios-medal"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-medal" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf10c;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-oem" class="ion-ios-oem"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-oem" class="ion-ios-oem"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-oem" class="ion-ios-oem"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-oem" class="ion-ios-oem"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-oem" class="ion-ios-oem"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-oem" class="ion-ios-oem"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-oem" class="ion-ios-oem"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-oem" class="ion-ios-oem"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-oem" class="ion-ios-oem"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-oem" class="ion-ios-oem"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-oem" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf10d;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-pda" class="ion-ios-pda"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-pda" class="ion-ios-pda"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-pda" class="ion-ios-pda"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-pda" class="ion-ios-pda"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-pda" class="ion-ios-pda"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-pda" class="ion-ios-pda"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-pda" class="ion-ios-pda"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-pda" class="ion-ios-pda"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-pda" class="ion-ios-pda"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-pda" class="ion-ios-pda"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-pda" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf10e;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-pda-outline" class="ion-ios-pda-outline"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-pda-outline" class="ion-ios-pda-outline"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-pda-outline" class="ion-ios-pda-outline"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-pda-outline" class="ion-ios-pda-outline"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-pda-outline" class="ion-ios-pda-outline"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-pda-outline" class="ion-ios-pda-outline"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-pda-outline" class="ion-ios-pda-outline"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-pda-outline" class="ion-ios-pda-outline"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-pda-outline" class="ion-ios-pda-outline"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-pda-outline" class="ion-ios-pda-outline"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-pda-outline" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf10f;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-print" class="ion-ios-print"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-print" class="ion-ios-print"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-print" class="ion-ios-print"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-print" class="ion-ios-print"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-print" class="ion-ios-print"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-print" class="ion-ios-print"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-print" class="ion-ios-print"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-print" class="ion-ios-print"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-print" class="ion-ios-print"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-print" class="ion-ios-print"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-print" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf110;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-rfid" class="ion-ios-rfid"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-rfid" class="ion-ios-rfid"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-rfid" class="ion-ios-rfid"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-rfid" class="ion-ios-rfid"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-rfid" class="ion-ios-rfid"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-rfid" class="ion-ios-rfid"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-rfid" class="ion-ios-rfid"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-rfid" class="ion-ios-rfid"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-rfid" class="ion-ios-rfid"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-rfid" class="ion-ios-rfid"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-rfid" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf111;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-scanner" class="ion-ios-scanner"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-scanner" class="ion-ios-scanner"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-scanner" class="ion-ios-scanner"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-scanner" class="ion-ios-scanner"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-scanner" class="ion-ios-scanner"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-scanner" class="ion-ios-scanner"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-scanner" class="ion-ios-scanner"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-scanner" class="ion-ios-scanner"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-scanner" class="ion-ios-scanner"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-scanner" class="ion-ios-scanner"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-scanner" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf112;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-screen-size" class="ion-ios-screen-size"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-screen-size" class="ion-ios-screen-size"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-screen-size" class="ion-ios-screen-size"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-screen-size" class="ion-ios-screen-size"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-screen-size" class="ion-ios-screen-size"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-screen-size" class="ion-ios-screen-size"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-screen-size" class="ion-ios-screen-size"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-screen-size" class="ion-ios-screen-size"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-screen-size" class="ion-ios-screen-size"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-screen-size" class="ion-ios-screen-size"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-screen-size" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf113;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-sdk" class="ion-ios-sdk"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-sdk" class="ion-ios-sdk"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-sdk" class="ion-ios-sdk"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-sdk" class="ion-ios-sdk"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-sdk" class="ion-ios-sdk"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-sdk" class="ion-ios-sdk"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-sdk" class="ion-ios-sdk"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-sdk" class="ion-ios-sdk"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-sdk" class="ion-ios-sdk"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-sdk" class="ion-ios-sdk"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-sdk" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf114;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-select" class="ion-ios-select"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-select" class="ion-ios-select"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-select" class="ion-ios-select"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-select" class="ion-ios-select"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-select" class="ion-ios-select"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-select" class="ion-ios-select"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-select" class="ion-ios-select"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-select" class="ion-ios-select"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-select" class="ion-ios-select"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-select" class="ion-ios-select"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-select" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf115;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-temperature" class="ion-ios-temperature"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-temperature" class="ion-ios-temperature"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-temperature" class="ion-ios-temperature"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-temperature" class="ion-ios-temperature"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-temperature" class="ion-ios-temperature"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-temperature" class="ion-ios-temperature"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-temperature" class="ion-ios-temperature"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-temperature" class="ion-ios-temperature"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-temperature" class="ion-ios-temperature"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-temperature" class="ion-ios-temperature"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-temperature" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf116;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-today" class="ion-ios-today"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-today" class="ion-ios-today"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-today" class="ion-ios-today"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-today" class="ion-ios-today"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-today" class="ion-ios-today"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-today" class="ion-ios-today"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-today" class="ion-ios-today"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-today" class="ion-ios-today"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-today" class="ion-ios-today"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-today" class="ion-ios-today"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-today" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf11e;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-user" class="ion-ios-user"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-user" class="ion-ios-user"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-user" class="ion-ios-user"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-user" class="ion-ios-user"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-user" class="ion-ios-user"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-user" class="ion-ios-user"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-user" class="ion-ios-user"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-user" class="ion-ios-user"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-user" class="ion-ios-user"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-user" class="ion-ios-user"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-user" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf117;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-user-outline" class="ion-ios-user-outline"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-user-outline" class="ion-ios-user-outline"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-user-outline" class="ion-ios-user-outline"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-user-outline" class="ion-ios-user-outline"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-user-outline" class="ion-ios-user-outline"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-user-outline" class="ion-ios-user-outline"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-user-outline" class="ion-ios-user-outline"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-user-outline" class="ion-ios-user-outline"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-user-outline" class="ion-ios-user-outline"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-user-outline" class="ion-ios-user-outline"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-user-outline" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf118;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-ios-wifi" class="ion-ios-wifi"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-ios-wifi" class="ion-ios-wifi"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-ios-wifi" class="ion-ios-wifi"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-ios-wifi" class="ion-ios-wifi"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-ios-wifi" class="ion-ios-wifi"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-ios-wifi" class="ion-ios-wifi"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-ios-wifi" class="ion-ios-wifi"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-ios-wifi" class="ion-ios-wifi"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-ios-wifi" class="ion-ios-wifi"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-ios-wifi" class="ion-ios-wifi"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-ios-wifi" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf119;" />
+        </div>
+      </div>
+      
+      <div class="glyph">
+        <div class="preview-glyphs">
+          <span class="step size-12"><span class="letters">Pp</span><i id="ion-md-pda" class="ion-md-pda"></i></span><span class="step size-14"><span class="letters">Pp</span><i id="ion-md-pda" class="ion-md-pda"></i></span><span class="step size-16"><span class="letters">Pp</span><i id="ion-md-pda" class="ion-md-pda"></i></span><span class="step size-18"><span class="letters">Pp</span><i id="ion-md-pda" class="ion-md-pda"></i></span><span class="step size-21"><span class="letters">Pp</span><i id="ion-md-pda" class="ion-md-pda"></i></span><span class="step size-24"><span class="letters">Pp</span><i id="ion-md-pda" class="ion-md-pda"></i></span><span class="step size-36"><span class="letters">Pp</span><i id="ion-md-pda" class="ion-md-pda"></i></span><span class="step size-48"><span class="letters">Pp</span><i id="ion-md-pda" class="ion-md-pda"></i></span><span class="step size-60"><span class="letters">Pp</span><i id="ion-md-pda" class="ion-md-pda"></i></span><span class="step size-72"><span class="letters">Pp</span><i id="ion-md-pda" class="ion-md-pda"></i></span>
+        </div>
+        <div class="preview-scale">
+          <span class="step">12</span><span class="step">14</span><span class="step">16</span><span class="step">18</span><span class="step">21</span><span class="step">24</span><span class="step">36</span><span class="step">48</span><span class="step">60</span><span class="step">72</span>
+        </div>
+        <div class="usage">
+          <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".ion-md-pda" />
+          <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf11a;" />
+        </div>
+      </div>
+      
+
+      <footer>
+        Made with love using <a href="http://fontcustom.com">Font Custom</a>.
+      </footer>
+    </div>
+  </body>
+</html>

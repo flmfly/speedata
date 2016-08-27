@@ -1,0 +1,158 @@
+<!--
+  Generated template for the SelectPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>三分钟选型</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        <ion-icon name="oem">&nbsp;</ion-icon>
+        操作系统
+      </ion-label>
+      <ion-select>
+        <ion-option value="nes">Android</ion-option>
+        <ion-option value="n64">Windows Mobile</ion-option>
+        <ion-option value="ps">Windows CE</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon name="connection">&nbsp;</ion-icon>
+        通讯模块
+      </ion-label>
+      <ion-select>
+        <ion-option value="nes">移动2G</ion-option>
+        <ion-option value="n64">联通3G</ion-option>
+        <ion-option value="ps">电信3G</ion-option>
+        <ion-option value="genesis">全网通4G</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon name="wifi">&nbsp;</ion-icon>
+        WIFI
+      </ion-label>
+      <ion-select>
+        <ion-option value="nes">802.11 b/g/n/a</ion-option>
+        <ion-option value="n64">2.4G</ion-option>
+        <ion-option value="ps">5G</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon name="screen-size">&nbsp;</ion-icon>
+        屏幕尺寸
+      </ion-label>
+      <ion-select>
+        <ion-option value="nes">4.0</ion-option>
+        <ion-option value="n64">5.0</ion-option>
+        <ion-option value="ps">5.5</ion-option>
+        <ion-option value="genesis">8.0</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon name="explosion">&nbsp;</ion-icon>
+        防爆功能
+      </ion-label>
+      <ion-toggle checked="false"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon name="scanner">&nbsp;</ion-icon>
+        条码扫描
+      </ion-label>
+      <ion-select>
+        <ion-option value="n64">一维码 - 新大陆</ion-option>
+        <ion-option value="n641">一维码 - 摩托罗拉</ion-option>
+        <ion-option value="n642">一维码 - 霍尼韦尔</ion-option>
+        <ion-option value="ps">二维码 - 新大陆</ion-option>
+        <ion-option value="ps1">二维码 - 摩托罗拉</ion-option>
+        <ion-option value="ps2">二维码 - 霍尼韦尔</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon name="rfid">&nbsp;</ion-icon>
+        RFID
+      </ion-label>
+      <ion-select>
+        <ion-option value="nes">低频 - 125K</ion-option>
+        <ion-option value="n64">低频 - 134.2K</ion-option>
+        <ion-option value="ps">高频 - 13.56M</ion-option>
+        <ion-option value="genesis">高频 - NFC</ion-option>
+        <ion-option value="saturn">超高频</ion-option>
+      </ion-select>
+      <button clear item-right (click)="buttonClick()" danger>
+        <ion-icon name="delete"></ion-icon>
+      </button>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon name="fingerprint">&nbsp;</ion-icon>
+        指纹识别
+      </ion-label>
+      <ion-select>
+        <ion-option value="nes">光学指纹</ion-option>
+        <ion-option value="n64">电容指纹</ion-option>
+      </ion-select>
+      <button clear item-right (click)="buttonClick()" danger>
+        <ion-icon name="delete"></ion-icon>
+      </button>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon name="print">&nbsp;</ion-icon>
+        打印机
+      </ion-label>
+      <ion-select>
+        <ion-option value="nes">一体式</ion-option>
+        <ion-option value="n64">无线蓝牙</ion-option>
+      </ion-select>
+      <button clear item-right (click)="buttonClick()" danger>
+        <ion-icon name="delete"></ion-icon>
+      </button>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon name="temperature">&nbsp;</ion-icon>
+        温度模块
+      </ion-label>
+      <ion-select>
+        <ion-option value="nes">物体表面</ion-option>
+        <ion-option value="n64">环境温度</ion-option>
+      </ion-select>
+      <button clear item-right (click)="buttonClick()" danger>
+        <ion-icon name="delete"></ion-icon>
+      </button>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon name="infrared">&nbsp;</ion-icon>
+        红外模块(自动匹配)
+      </ion-label>
+      <ion-toggle checked="false"></ion-toggle>
+    </ion-item>
+  </ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col>&nbsp;</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>&nbsp;</ion-col>
+    </ion-row>
+  </ion-grid>
+  <button fab fab-bottom fab-fixed fab-center (click)="nav2ProductList()">GO</button>
+
+</ion-content>

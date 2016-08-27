@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar text-center>
+    <img src="img/logo.png" width="30px" height="30px" style="position: relative; top: 3px;"/>
+    <span class="titleicon">&nbsp;思必拓股份</span>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-padding class="home">
+  <ion-slides pager style="height:auto;">
+    <ion-slide>
+      <img src="img/slide/1.jpg"/>
+    </ion-slide>
+    <ion-slide>
+      <img src="img/slide/2.jpg"/>
+    </ion-slide>
+    <ion-slide>
+      <img src="img/slide/3.jpg"/>
+    </ion-slide>
+  </ion-slides>
+  <div style="height:16px;">&nbsp;</div>
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col width-33>
+        <button clear block class="text-on-bottom" (click)="nav2SelectPage()">
+          <ion-icon name="select"></ion-icon>
+          三分钟选型
+        </button>
+      </ion-col>
+      <ion-col width-33>
+        <button clear block class="text-on-bottom" (click)="nav2TradeCategoryPage()">
+          <ion-icon name="medal"></ion-icon>
+          行业应用
+        </button>
+      </ion-col>
+      <ion-col width-33>
+        <button clear block class="text-on-bottom" (click)="nav2OemPge()">
+          <ion-icon name="oem"></ion-icon>
+          OEM/ODM
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col width-33>
+        <button clear block class="text-on-bottom" (click)="nav2SdkPage()">
+          <ion-icon name="sdk"></ion-icon>
+          SDK下载
+        </button>
+      </ion-col>
+      <ion-col width-33>
+        <button clear block class="text-on-bottom" (click)="nav2CompanyPage()">
+          <ion-icon name="company"></ion-icon>
+          公司风采
+        </button>
+      </ion-col>
+      <ion-col width-33>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
