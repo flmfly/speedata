@@ -1,6 +1,9 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
+import {User} from "../../model/user";
+import {DataService} from "../data-service/data-service";
+
 
 /*
  Generated class for the Session provider.
@@ -13,11 +16,49 @@ export class Session {
 
   public fillCustomInfo: boolean = false;
 
-  constructor(private http: Http) {
+  public user: User = {account: '13717756822', type: {id: 7}};
+
+  constructor(private http: Http,
+              private dataService: DataService) {
+
+  }
+
+  saveUser() {
+    let data = {
+      func: "wechartuser",
+      operation: 2,
+      data: [this.user]
+    };
+    this.dataService.write(data).subscribe(
+      (data) => {
+        this.user = data.data[0];
+      },
+      err => console.error(err),
+      () => console.log('Authentication Complete')
+    );
   }
 
   public requireCustomInfo() {
     return !this.fillCustomInfo;
+  }
+
+  public checkUser() {
+    this.dataService.read({
+      func: "wechartuser",
+      query: {account: this.user.account},
+      page: {num: -1, size: -1}
+    }).subscribe(
+      (data) => {
+        if (data.data.length > 0) {
+          this.user = data.data[0];
+          this.fillCustomInfo = this.user.company && this.user.company.trim() !== '';
+        } else {
+          this.saveUser();
+        }
+      },
+      err => console.error(err),
+      () => console.log('Authentication Complete')
+    );
   }
 
 }

@@ -15,6 +15,6 @@
 
 <ion-content no-padding class="trade-category">
   <ion-list>
-    <button ion-item *ngFor="let category of categories" (click)="presentModal(category)">{{category}}</button>
+    <button ion-item *ngFor="let category of categories" (click)="nav2TradeSubPage(category)">{{category.name}}</button>
   </ion-list>
 </ion-content>

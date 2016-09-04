@@ -3,11 +3,12 @@ import {Platform, ionicBootstrap} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {TabsPage} from './pages/tabs/tabs';
 import {Session} from "./providers/session/session";
+import {DataService} from "./providers/data-service/data-service";
 
 
 @Component({
   template: '<ion-nav [root]="rootPage"></ion-nav>',
-  providers: [Session]
+  providers: [Session, DataService]
 })
 export class MyApp {
 

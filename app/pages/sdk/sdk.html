@@ -25,27 +25,26 @@
   <ion-list style="margin-bottom: 16px">
     <ion-item>
       <ion-label>产品型号</ion-label>
-      <ion-select>
-        <ion-option>KT40</ion-option>
-        <ion-option>KT45</ion-option>
-        <ion-option>KT80</ion-option>
+      <ion-select [(ngModel)]="productId">
+        <ion-option *ngFor="let p of products" value="{{p.id}}">{{p.name}}</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
       <ion-label primary stacked>邮箱</ion-label>
-      <ion-input placeholder="请填写您的邮箱"></ion-input>
+      <ion-input placeholder="请填写您的邮箱" [(ngModel)]="email"></ion-input>
     </ion-item>
   </ion-list>
 
   <div padding style="padding-top: 0">
-    <button block outline no-margin>
+    <button block outline no-margin (click)="submitRequest()">
       提交下载
     </button>
   </div>
   <div padding style="padding-top: 0">
-  <button block favorite no-margin>
-    <ion-icon name="call-outline"></ion-icon>400-8888-8888
-  </button>
+    <button block favorite no-margin>
+      <ion-icon name="call-outline"></ion-icon>
+      400-8888-8888
+    </button>
   </div>
 
 </ion-content>

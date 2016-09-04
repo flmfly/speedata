@@ -1,6 +1,9 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {ProductListPage} from "../product-list/product-list";
+import {DataService} from "../../providers/data-service/data-service";
+import {ProductCategory} from "../../model/product-category";
+import {Global} from "../../providers/global/global";
 
 /*
  Generated class for the ProductPage page.
@@ -12,12 +15,42 @@ import {ProductListPage} from "../product-list/product-list";
   templateUrl: 'build/pages/product/product.html',
 })
 export class ProductPage {
+  private categories: ProductCategory[][] = [];
 
-  constructor(private nav:NavController) {
+  constructor(private nav: NavController,
+              private dataService: DataService) {
+    let query = {func: "productcategory", query: {"isValid": {val: true}}, page: {num: -1, size: -1}};
+    dataService.read(query).subscribe(
+      (data) => {
 
+        let list = data.data;
+        let i = 0;
+        for (; i < list.length;) {
+          let tempArray: ProductCategory[] = [];
+          tempArray.push({
+            name: list[i].name,
+            id: list[i].id,
+            picUrl: Global.picBaseUrl + list[i].attachment[0].url || ''
+          });
+          i++;
+          if (i < list.length) {
+            tempArray.push({
+              name: list[i].name,
+              id: list[i].id,
+              picUrl: Global.picBaseUrl + list[i].attachment[0].url || ''
+            });
+            i++;
+          }
+          this.categories.push(tempArray);
+        }
+
+      },
+      err => console.error(err),
+      () => console.log('Authentication Complete')
+    );
   }
 
-  nav2ProductList() {
-    this.nav.parent.parent.push(ProductListPage);
+  nav2ProductList(cId: number) {
+    this.nav.parent.parent.push(ProductListPage, {cId: cId});
   }
 }

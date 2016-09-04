@@ -15,12 +15,7 @@
 
 <ion-content no-padding>
   <ion-list>
-    <button ion-item>公司简介</button>
-    <button ion-item>发展历程</button>
-    <button ion-item>项目报备</button>
-    <button ion-item>员工风采</button>
-    <button ion-item>企业视频</button>
-    <button ion-item>招聘岗位</button>
+    <button ion-item *ngFor="let c of contents" (click)="nav2CompanyDetailPage(c)">{{c.name}}</button>
   </ion-list>
 
 </ion-content>

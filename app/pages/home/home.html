@@ -7,14 +7,8 @@
 
 <ion-content no-padding class="home">
   <ion-slides pager style="height:auto;">
-    <ion-slide>
-      <img src="img/slide/1.jpg"/>
-    </ion-slide>
-    <ion-slide>
-      <img src="img/slide/2.jpg"/>
-    </ion-slide>
-    <ion-slide>
-      <img src="img/slide/3.jpg"/>
+    <ion-slide *ngFor="let u of pics">
+      <img src="{{u}}"/>
     </ion-slide>
   </ion-slides>
   <div style="height:16px;">&nbsp;</div>

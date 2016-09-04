@@ -1,8 +1,11 @@
 import {Component} from '@angular/core';
-import {NavController, ModalController} from 'ionic-angular';
+import {NavController, ModalController, NavParams} from 'ionic-angular';
 import {PrototypePage} from "../prototype/prototype";
 import {OrderPage} from "../order/order";
 import {Session} from "../../providers/session/session";
+import {DataService} from "../../providers/data-service/data-service";
+import {Product} from "../../model/product";
+import {Global} from "../../providers/global/global";
 
 /*
  Generated class for the ProductDetailPage page.
@@ -19,8 +22,45 @@ export class ProductDetailPage {
 
   private footerIsShown: boolean = true;
 
+  private product: Product = {id: 0, name: ''};
+
+  private seg: string = 'content';
+
   constructor(private nav: NavController,
-              private session: Session) {
+              private session: Session,
+              private navParam: NavParams,
+              private dataService: DataService) {
+    dataService.read({
+      func: "product",
+      query: {"id": {val: navParam.get('pId')}},
+      page: {num: -1, size: -1}
+    }).subscribe(
+      (data) => {
+        let temp = data.data[0];
+
+
+        let pics: string[] = [];
+        if (temp.attachment && temp.attachment.length > 0) {
+          temp.attachment.forEach(
+            (el) => {
+              pics.push(Global.picBaseUrl + el.url);
+            }
+          );
+        } else {
+          pics.push(Global.blankPic);
+        }
+
+        this.product = {
+          id: temp.id,
+          name: temp.name,
+          pics: pics,
+          content: temp.intro,
+          spec: temp.spec
+        };
+      },
+      err => console.error(err),
+      () => console.log('Authentication Complete')
+    );
 
   }
 

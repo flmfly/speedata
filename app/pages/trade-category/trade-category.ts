@@ -1,7 +1,8 @@
 import {Component} from '@angular/core';
 import {NavController, ModalController} from 'ionic-angular';
 import {TradeSubPage} from '../trade-sub/trade-sub';
-import {TradeService} from "../../providers/trade-service/trade-service";
+import {DataService} from "../../providers/data-service/data-service";
+import {Trade} from "../../model/trade";
 
 /*
  Generated class for the TradeCategoryPage page.
@@ -10,40 +11,30 @@ import {TradeService} from "../../providers/trade-service/trade-service";
  Ionic pages and navigation.
  */
 @Component({
-  templateUrl: 'build/pages/trade-category/trade-category.html',
-  providers: [TradeService]
+  templateUrl: 'build/pages/trade-category/trade-category.html'
 })
 export class TradeCategoryPage {
 
-  private categories: string[] = [];
+  private categories: Trade[] = [];
 
   constructor(private nav: NavController,
               private modalController: ModalController,
-              private tradeService: TradeService) {
-    this.categories.push('快递物流');
-    this.categories.push('石油石化');
-    this.categories.push('电力水利');
-    this.categories.push('医药医疗');
-    this.categories.push('零售图书');
-    this.categories.push('移动执法');
-    this.categories.push('金融行业');
-    this.categories.push('票务管理');
-    this.categories.push('物业管理');
-    this.categories.push('停车管理');
-    this.categories.push('地理信息');
-
-    tradeService.fetchTrade().subscribe(
-      data => console.log(data),
+              private dataService: DataService) {
+    let query = {func: "trade", query: {"parent.id": {isnullval: true}}, page: {num: -1, size: -1}};
+    dataService.read(query).subscribe(
+      (data) => {
+        data.data.forEach((el) => {
+          this.categories.push({name: el.name, id: el.id, content: ''});
+        });
+      },
       err => console.error(err),
       () => console.log('Authentication Complete')
     );
   }
 
-  nav2TradeSubPage(title: string) {
-    this.nav.push(TradeSubPage, {title: title});
-  }
-
-  presentModal(title: string) {
-    this.nav.push(TradeSubPage, {title: title});
+  nav2TradeSubPage(trade: Trade) {
+    this.nav.push(TradeSubPage, {trade: trade});
   }
 }
+
+

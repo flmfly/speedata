@@ -8,52 +8,19 @@
 
 <ion-content no-padding class="product">
   <ion-grid>
-    <ion-row>
-      <ion-col width-50>
-        <ion-card no-margin (click)="nav2ProductList();">
+    <ion-row *ngFor="let row of categories">
+      <ion-col width-50 *ngFor="let c of row">
+        <ion-card no-margin (click)="nav2ProductList(c.id);">
           <ion-card-header>
-            KT40
+            {{c.name}}
           </ion-card-header>
-          <ion-list>
+          <ion-list no-lines class="border-top-grey">
             <ion-item>
-              <img src="img/products/kt40.jpg"/>
+              <img src="{{c.picUrl}}"/>
             </ion-item>
           </ion-list>
         </ion-card>
       </ion-col>
-      <ion-col width-50>
-        <ion-card no-margin (click)="nav2ProductList();">
-          <ion-card-header>
-            KT45
-          </ion-card-header>
-          <ion-list>
-            <ion-item>
-              <img src="img/products/kt45.jpg"/>
-            </ion-item>
-          </ion-list>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col width-50>
-        <ion-card no-margin (click)="nav2ProductList();">
-          <ion-card-header>
-            KT80
-          </ion-card-header>
-          <ion-list>
-            <ion-item>
-              <img src="img/products/kt80.jpg"/>
-            </ion-item>
-          </ion-list>
-        </ion-card>
-      </ion-col>
-      <!--<ion-col width-50>-->
-      <!--<ion-card no-margin>-->
-      <!--<img src="img/products/kt80.jpg"/>-->
-      <!--<div class="card-title">Madison</div>-->
-      <!--<div class="card-subtitle">28 Listings</div>-->
-      <!--</ion-card>-->
-      <!--</ion-col>-->
     </ion-row>
   </ion-grid>
 

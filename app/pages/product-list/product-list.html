@@ -16,17 +16,11 @@
 <ion-content no-padding>
 
   <ion-list>
-    <button ion-item (click)="nav2ProductDetail()">
+    <button ion-item *ngFor="let p of productList" (click)="nav2ProductDetail(p.id)">
       <ion-thumbnail item-left>
-        <img src="img/products/kt40.jpg">
+        <img src="{{p.picUrl}}">
       </ion-thumbnail>
-      <h2>KT40Q手持终端</h2>
-    </button>
-    <button ion-item (click)="nav2ProductDetail()">
-      <ion-thumbnail item-left>
-        <img src="img/products/kt45.jpg">
-      </ion-thumbnail>
-      <h2>KT45Q手持终端</h2>
+      <h2>{{p.name}}</h2>
     </button>
   </ion-list>
 </ion-content>

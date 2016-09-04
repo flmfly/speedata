@@ -1,7 +1,8 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams, ViewController} from 'ionic-angular';
 import {TradeDetailPage} from '../trade-detail/trade-detail';
-
+import {Trade} from "../../model/trade";
+import {DataService} from "../../providers/data-service/data-service";
 
 /*
  Generated class for the TradeSubPage page.
@@ -16,18 +17,28 @@ export class TradeSubPage {
 
   private title: string;
 
-  private subs: string[] = [];
+  private subs: Trade[] = [];
 
-  constructor(private nav: NavController, public params: NavParams, public viewCtrl: ViewController) {
-    this.title = this.params.get('title');
-
-    this.subs.push('出入库管理');
-    this.subs.push('资产盘点');
-    this.subs.push('电子商务');
+  constructor(private nav: NavController,
+              public params: NavParams,
+              public viewCtrl: ViewController,
+              private dataService: DataService) {
+    let trade: Trade = this.params.get('trade');
+    this.title = trade.name;
+    let query = {func: "trade", query: {"parent.id": {val: trade.id}}, page: {num: -1, size: -1}};
+    dataService.read(query).subscribe(
+      (data) => {
+        data.data.forEach((el) => {
+          this.subs.push({name: el.name, id: el.id, content: el.content || ''});
+        });
+      },
+      err => console.error(err),
+      () => console.log('Authentication Complete')
+    );
   }
 
-  nav2TradeDetailPage(title: string){
-    this.nav.push(TradeDetailPage, {title: title});
+  nav2TradeDetailPage(trade: Trade) {
+    this.nav.push(TradeDetailPage, {trade: trade});
   }
 
   dismiss() {

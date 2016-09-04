@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
+import {Trade} from "../../model/trade";
 
 /*
  Generated class for the TradeDetailPage page.
@@ -12,12 +13,12 @@ import {NavController, NavParams} from 'ionic-angular';
 })
 export class TradeDetailPage {
 
-  private title: string;
+  private trade: Trade;
 
   private footerIsShown: boolean = true;
 
   constructor(private nav: NavController, private params: NavParams) {
-    this.title = this.params.get('title');
+    this.trade = this.params.get('trade');
   }
 
   onPageWillLeave(){

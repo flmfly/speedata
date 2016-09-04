@@ -20,23 +20,23 @@
   <ion-list>
     <ion-item>
       <ion-label primary stacked>功能描述</ion-label>
-      <ion-textarea rows="4" placeholder="请您将功能描述清楚，以便于销售人员为您报价!"></ion-textarea>
+      <ion-textarea rows="4" [(ngModel)]="enquiry.function" placeholder="请您将功能描述清楚，以便于销售人员为您报价!"></ion-textarea>
     </ion-item>
     <ion-item>
-      <ion-label primary stacked>项目名称</ion-label>
-      <ion-input type="email" placeholder=""></ion-input>
+      <ion-label primary stacked>项目名称 *</ion-label>
+      <ion-input type="email" [(ngModel)]="enquiry.project" placeholder=""></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label primary stacked>需求数量</ion-label>
-      <ion-input type="number" placeholder=""></ion-input>
+      <ion-label primary stacked>需求数量 *</ion-label>
+      <ion-input type="number" [(ngModel)]="enquiry.quantity" placeholder=""></ion-input>
     </ion-item>
     <ion-item>
       <ion-label primary stacked>是否定制</ion-label>
-      <ion-toggle checked="false"></ion-toggle>
+      <ion-toggle checked="false" [(ngModel)]="enquiry.isCustom"></ion-toggle>
     </ion-item>
     <ion-item>
-      <ion-label primary stacked>邮箱</ion-label>
-      <ion-input type="email" placeholder="请填写接收报价单的邮箱"></ion-input>
+      <ion-label primary stacked>邮箱 *</ion-label>
+      <ion-input type="email" [(ngModel)]="enquiry.email" placeholder="请填写接收报价单的邮箱"></ion-input>
     </ion-item>
   </ion-list>
 

@@ -20,31 +20,31 @@
   <ion-list>
     <span ion-item>
       微信号
-      <span item-right class="color-light">weixin888</span>
+      <span item-right class="color-light">{{user.account}}</span>
     </span>
     <span ion-item (click)="nav2ResetMobile()">
       手机号
-      <span item-right class="color-light">138****8888</span>
+      <span item-right class="color-light">{{user.phone}}</span>
     </span>
     <span ion-item (click)="nav2ResetPassword()">
       称呼
-      <span item-right class="color-light">李先生</span>
+      <span item-right class="color-light">{{user.title}}</span>
     </span>
     <span ion-item>
       公司名称
-      <span item-right class="color-light">思必拓股份</span>
+      <span item-right class="color-light">{{user.company}}</span>
     </span>
     <span ion-item>
       营业执照号
-      <span item-right class="color-light">532501100006302</span>
+      <span item-right class="color-light">{{user.license}}</span>
     </span>
     <span ion-item>
       所属行业
-      <span item-right class="color-light">智能硬件</span>
+      <span item-right class="color-light">{{user.trade.name}}</span>
     </span>
     <span ion-item>
       所在地址
-      <span item-right class="color-light">上地六街</span>
+      <span item-right class="color-light">{{user.address}}</span>
     </span>
   </ion-list>
 </ion-content>

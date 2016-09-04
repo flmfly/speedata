@@ -22,47 +22,32 @@
 <ion-content no-padding>
   <ion-list>
     <ion-item>
-      <ion-label primary stacked>公司名称</ion-label>
-      <ion-input type="email" placeholder=""></ion-input>
+      <ion-label primary stacked>公司名称 *</ion-label>
+      <ion-input type="text" [(ngModel)]="user.company" placeholder=""></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label primary stacked>营业执照号</ion-label>
-      <ion-input type="email" placeholder=""></ion-input>
+      <ion-label primary stacked>营业执照号 *</ion-label>
+      <ion-input type="text" [(ngModel)]="user.license" placeholder=""></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label primary stacked>联系电话</ion-label>
-      <ion-input type="email" placeholder=""></ion-input>
+      <ion-label primary stacked>联系电话 *</ion-label>
+      <ion-input type="text" [(ngModel)]="user.phone" placeholder=""></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label primary stacked>称呼</ion-label>
-      <ion-input type="email" placeholder=""></ion-input>
+      <ion-label primary stacked>称呼 *</ion-label>
+      <ion-input type="text" [(ngModel)]="user.title" placeholder=""></ion-input>
     </ion-item>
     <ion-item>
       <ion-label primary stacked>
-        应用行业
+        应用行业 *
       </ion-label>
-      <ion-select [(ngModel)]="gaming" placeholder="点击选择行业">
-        <ion-option value="nes">快递物流</ion-option>
-        <ion-option value="n64">仓储盘点</ion-option>
-        <ion-option value="n641">移动访销</ion-option>
-        <ion-option value="n642">电力水利</ion-option>
-        <ion-option value="n643">电子商务</ion-option>
-        <ion-option value="n644">温度管理</ion-option>
-        <ion-option value="n645">门店管理</ion-option>
-        <ion-option value="n646">点检巡检</ion-option>
-        <ion-option value="n647">现金押运</ion-option>
-        <ion-option value="n648">占道停车</ion-option>
-        <ion-option value="n649">警务执法</ion-option>
-        <ion-option value="n6410">保险定损</ion-option>
-        <ion-option value="n6411">药品追溯</ion-option>
-        <ion-option value="n6412">食品监管</ion-option>
-        <ion-option value="n6413">动物检疫</ion-option>
-        <ion-option value="n6413">其他</ion-option>
+      <ion-select [(ngModel)]="tradeId" placeholder="点击选择行业">
+        <ion-option *ngFor="let c of categories" value="{{c.id}}">{{c.name}}</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label primary stacked>公司地址</ion-label>
-      <ion-textarea rows="4" placeholder=""></ion-textarea>
+      <ion-label primary stacked>公司地址 *</ion-label>
+      <ion-textarea rows="4" [(ngModel)]="user.address" placeholder=""></ion-textarea>
     </ion-item>
   </ion-list>
 </ion-content>

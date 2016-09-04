@@ -1,5 +1,5 @@
 <!--
-  Generated template for the OemPage page.
+  Generated template for the CompanyDetailPage page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,13 +7,12 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>OEM/ODM</ion-title>
+    <ion-title>{{c.name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
-  <button outline block *ngFor="let oem of oems" (click)="nav2OemDetailPage(oem.id)">{{oem.name}}</button>
+  <div [innerHTML]="c.content"></div>
 </ion-content>
