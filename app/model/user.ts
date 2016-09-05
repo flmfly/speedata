@@ -12,5 +12,4 @@ export interface User {
   phone?: string;
   trade?: Trade;
   address?: string;
-  type?: any;
 }
