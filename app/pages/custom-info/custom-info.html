@@ -19,34 +19,34 @@
 </ion-header>
 
 
-<ion-content no-padding>
+<ion-content no-padding class="custom-info">
   <ion-list>
     <ion-item>
-      <ion-label primary stacked>公司名称 *</ion-label>
+      <ion-label primary stacked>公司名称 <ion-icon name="star"></ion-icon></ion-label>
       <ion-input type="text" [(ngModel)]="user.company" placeholder=""></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label primary stacked>营业执照号 *</ion-label>
+      <ion-label primary stacked>营业执照号 <ion-icon name="star"></ion-icon></ion-label>
       <ion-input type="text" [(ngModel)]="user.license" placeholder=""></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label primary stacked>联系电话 *</ion-label>
+      <ion-label primary stacked>联系电话 <ion-icon name="star"></ion-icon></ion-label>
       <ion-input type="text" [(ngModel)]="user.phone" placeholder=""></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label primary stacked>称呼 *</ion-label>
+      <ion-label primary stacked>称呼 <ion-icon name="star"></ion-icon></ion-label>
       <ion-input type="text" [(ngModel)]="user.title" placeholder=""></ion-input>
     </ion-item>
     <ion-item>
       <ion-label primary stacked>
-        应用行业 *
+        应用行业  <ion-icon name="star"></ion-icon>
       </ion-label>
       <ion-select [(ngModel)]="tradeId" placeholder="点击选择行业">
         <ion-option *ngFor="let c of categories" value="{{c.id}}">{{c.name}}</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label primary stacked>公司地址 *</ion-label>
+      <ion-label primary stacked>公司地址 <ion-icon name="star"></ion-icon></ion-label>
       <ion-textarea rows="4" [(ngModel)]="user.address" placeholder=""></ion-textarea>
     </ion-item>
   </ion-list>

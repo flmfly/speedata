@@ -75,10 +75,10 @@ export class ProductDetailPage {
   }
 
   nav2Prototype() {
-    this.nav.push(PrototypePage, {session: this.session});
+    this.nav.push(PrototypePage, {session: this.session, product: this.product});
   }
 
   nav2Order() {
-    this.nav.push(OrderPage, {session: this.session});
+    this.nav.push(OrderPage, {session: this.session, product: this.product});
   }
 }

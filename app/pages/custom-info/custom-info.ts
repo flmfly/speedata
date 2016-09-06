@@ -66,13 +66,11 @@ export class CustomInfoPage {
   }
 
   save() {
-    console.log(this.categories);
     this.categories.forEach((el) => {
       if (el.id == this.tradeId) {
         this.user.trade = el;
       }
     });
-    console.log(this.user);
     if (this.validate()) {
       this.dataService.write({
         func: "wechartuser",
@@ -82,7 +80,6 @@ export class CustomInfoPage {
         (data) => {
           this.session.user = data.data[0];
           this.session.fillCustomInfo = true;
-          console.log(data);
           this.alertCtrl.create({
             subTitle: '保存成功',
             buttons: [{

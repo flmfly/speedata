@@ -4,11 +4,11 @@
 
 @font-face {
   font-family: "icons";
-  src: url("./icons_7a128982fe13f462c09b48e390450839.eot");
-  src: url("./icons_7a128982fe13f462c09b48e390450839.eot?#iefix") format("embedded-opentype"),
-       url("./icons_7a128982fe13f462c09b48e390450839.woff") format("woff"),
-       url("./icons_7a128982fe13f462c09b48e390450839.ttf") format("truetype"),
-       url("./icons_7a128982fe13f462c09b48e390450839.svg#icons") format("svg");
+  src: url("./icons_e9ea7ea4bd85fbeb197c6128066409e3.eot");
+  src: url("./icons_e9ea7ea4bd85fbeb197c6128066409e3.eot?#iefix") format("embedded-opentype"),
+       url("./icons_e9ea7ea4bd85fbeb197c6128066409e3.woff") format("woff"),
+       url("./icons_e9ea7ea4bd85fbeb197c6128066409e3.ttf") format("truetype"),
+       url("./icons_e9ea7ea4bd85fbeb197c6128066409e3.svg#icons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -16,7 +16,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "icons";
-    src: url("./icons_7a128982fe13f462c09b48e390450839.svg#icons") format("svg");
+    src: url("./icons_e9ea7ea4bd85fbeb197c6128066409e3.svg#icons") format("svg");
   }
 }
 
@@ -48,6 +48,7 @@
 .ion-ios-screen-size:before,
 .ion-ios-sdk:before,
 .ion-ios-select:before,
+.ion-ios-star:before,
 .ion-ios-temperature:before,
 .ion-ios-today:before,
 .ion-ios-user:before,
@@ -93,6 +94,7 @@
 .ion-ios-screen-size:before { content: "\f113"; }
 .ion-ios-sdk:before { content: "\f114"; }
 .ion-ios-select:before { content: "\f115"; }
+.ion-ios-star:before { content: "\f11f"; }
 .ion-ios-temperature:before { content: "\f116"; }
 .ion-ios-today:before { content: "\f11e"; }
 .ion-ios-user:before { content: "\f117"; }

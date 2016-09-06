@@ -11,7 +11,7 @@
       <ion-avatar item-left>
         <img src="img/avatar/avatar-ts-buzz.png"/>
       </ion-avatar>
-      <h2>weixin888</h2>
+      <h2>{{session.user.account}}</h2>
     </button>
   </ion-list>
 
@@ -31,11 +31,6 @@
     <ion-list-header>
 
     </ion-list-header>
-    <button ion-item (click)="NIY()">
-      <!--<ion-icon [name]="'logo-' + item.icon" [ngStyle]="{'color': item.color}" item-left></ion-icon>-->
-      帮助
-      <!--<ion-icon md="ios-arrow-forward" item-right class="color-light"></ion-icon>-->
-    </button>
     <button ion-item (click)="NIY()">
       <!--<ion-icon [name]="'logo-' + item.icon" [ngStyle]="{'color': item.color}" item-left></ion-icon>-->
       关于

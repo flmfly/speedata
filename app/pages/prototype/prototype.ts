@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 import {NavController, ViewController, AlertController, Events, NavParams, ModalController} from 'ionic-angular';
 import {Session} from "../../providers/session/session";
 import {CustomInfoPage} from "../custom-info/custom-info";
+import {DataService} from "../../providers/data-service/data-service";
+import {Order} from "../../model/order";
 /*
  Generated class for the PrototypePage page.
 
@@ -17,34 +19,73 @@ export class PrototypePage {
 
   private session: Session;
 
+  private order: Order = {
+    product: {id: 0},
+    quantity: 1,
+    receiver: '',
+    receiverPhone: '',
+    address: '',
+    remark: '',
+    isPrototype: true
+  };
+
   constructor(private navCtrl: NavController,
               private viewCtrl: ViewController,
               private alertCtrl: AlertController,
               public events: Events,
               private navParams: NavParams,
-              private modalCtrl: ModalController) {
+              private modalCtrl: ModalController,
+              private dataService: DataService) {
     this.session = navParams.get('session');
+    this.order.user = this.session.user;
+    this.order.product.id = navParams.get('product').id;
     events.subscribe(this.sign, () => {
       setTimeout(() => {
-        let alert = this.alertCtrl.create({
-          subTitle: '样机申请提交成功',
-          buttons: [{
-            text: 'OK',
-            handler: () => {
-
-              setTimeout(() => {
-                alert.dismiss();
-                navCtrl.pop();
-              }, 200);
-            }
-          }
-          ]
-        });
-        alert.present();
+        this.saveOrder();
       }, 200);
-
     });
+  }
 
+  saveOrder() {
+    if (this.validate()) {
+      this.dataService.write({
+        func: "order",
+        operation: 2,
+        data: [this.order]
+      }).subscribe(
+        (data) => {
+          let alert = this.alertCtrl.create({
+            subTitle: '样机申请提交成功,请到我的页面订单列表中查看！',
+            buttons: [{
+              text: 'OK',
+              handler: () => {
+
+                alert.dismiss();
+                this.navCtrl.pop();
+              }
+            }
+            ]
+          });
+          alert.present();
+        },
+        err => console.error(err),
+        () => console.log('Authentication Complete')
+      );
+    }
+  }
+
+  validate(): boolean {
+    if (this.order.receiver.trim() === ''
+      || this.order.receiverPhone.trim() === ''
+      || this.order.address.trim() === '') {
+      this.alertCtrl.create({
+        // title: 'New Friend!',
+        message: '星号标记的都为必填项!',
+        buttons: ['OK']
+      }).present();
+      return false;
+    }
+    return true;
   }
 
   submit() {
@@ -64,20 +105,8 @@ export class PrototypePage {
           }
         ]
       }).present();
-    }else{
-      let alert = this.alertCtrl.create({
-        subTitle: '样机申请提交成功',
-        buttons: [{
-          text: 'OK',
-          handler: () => {
-
-            alert.dismiss();
-            this.navCtrl.pop();
-          }
-        }
-        ]
-      });
-      alert.present();
+    } else {
+      this.saveOrder();
     }
   }
 }

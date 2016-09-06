@@ -2,6 +2,8 @@ import {Component} from "@angular/core";
 import {NavController, AlertController} from "ionic-angular";
 import {ProfilePage} from "../profile/profile";
 import {OrderListPage} from "../order-list/order-list";
+import {Session} from "../../providers/session/session";
+import {User} from "../../model/user";
 
 /*
  Generated class for the PersonalPage page.
@@ -14,8 +16,10 @@ import {OrderListPage} from "../order-list/order-list";
 })
 export class PersonalPage {
 
-  constructor(private nav: NavController, private alertCtrl: AlertController) {
 
+  constructor(private nav: NavController,
+              private alertCtrl: AlertController,
+              private session: Session) {
   }
 
   nav2Profile() {

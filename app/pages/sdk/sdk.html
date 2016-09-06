@@ -24,13 +24,13 @@
 
   <ion-list style="margin-bottom: 16px">
     <ion-item>
-      <ion-label>产品型号</ion-label>
-      <ion-select [(ngModel)]="productId">
+      <ion-label primary stacked>产品型号 <ion-icon name="star"></ion-icon></ion-label>
+      <ion-select [(ngModel)]="productId" placeholder="点击选择产品">
         <ion-option *ngFor="let p of products" value="{{p.id}}">{{p.name}}</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label primary stacked>邮箱</ion-label>
+      <ion-label primary stacked>邮箱 <ion-icon name="star"></ion-icon></ion-label>
       <ion-input placeholder="请填写您的邮箱" [(ngModel)]="email"></ion-input>
     </ion-item>
   </ion-list>

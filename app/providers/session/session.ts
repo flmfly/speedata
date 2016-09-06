@@ -16,7 +16,7 @@ export class Session {
 
   public fillCustomInfo: boolean = false;
 
-  public user: User = {account: '13717756822', type: {id: 7}};
+  public user: User;
 
   constructor(private http: Http,
               private dataService: DataService) {
@@ -27,7 +27,7 @@ export class Session {
     let data = {
       func: "wechartuser",
       operation: 2,
-      data: [this.user]
+      data: [{account: this.getUserAccount()}]
     };
     this.dataService.write(data).subscribe(
       (data) => {
@@ -45,7 +45,7 @@ export class Session {
   public checkUser() {
     this.dataService.read({
       func: "wechartuser",
-      query: {account: this.user.account},
+      query: {account: this.getUserAccount()},
       page: {num: -1, size: -1}
     }).subscribe(
       (data) => {
@@ -61,5 +61,9 @@ export class Session {
     );
   }
 
+  private getUserAccount(): string {
+
+    return '13717756822';
+  }
 }
 

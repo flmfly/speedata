@@ -19,19 +19,25 @@
 </ion-header>
 
 
-<ion-content no-padding>
+<ion-content no-padding class="prototype">
   <ion-list>
     <ion-item>
-      <ion-label primary stacked>收货人</ion-label>
-      <ion-input type="email" placeholder=""></ion-input>
+      <ion-label primary stacked>收货人
+        <ion-icon name="star"></ion-icon>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="order.receiver" placeholder=""></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label primary stacked>收货人电话</ion-label>
-      <ion-input type="number" placeholder=""></ion-input>
+      <ion-label primary stacked>收货人电话
+        <ion-icon name="star"></ion-icon>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="order.receiverPhone" placeholder=""></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label primary stacked>收货地址</ion-label>
-      <ion-textarea rows="4" placeholder=""></ion-textarea>
+      <ion-label primary stacked>收货地址
+        <ion-icon name="star"></ion-icon>
+      </ion-label>
+      <ion-textarea rows="4" [(ngModel)]="order.address" placeholder=""></ion-textarea>
     </ion-item>
   </ion-list>
 </ion-content>
