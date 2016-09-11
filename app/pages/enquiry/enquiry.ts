@@ -17,7 +17,6 @@ import {Enquiry} from "../../model/enquiry";
 export class EnquiryPage {
 
   private enquiry: Enquiry = {
-    id: 0,
     project: '',
     func: '',
     isCustom: false,
@@ -35,7 +34,27 @@ export class EnquiryPage {
               private dataService: DataService,
               private viewCtrl: ViewController) {
 
-    events.subscribe(this.sign, this.saveEnquiry);
+    events.subscribe(this.sign, () => {
+      this.dataService.write({
+        func: "enquiry",
+        operation: 2,
+        data: [this.enquiry]
+      }).subscribe(
+        (data) => {
+          this.enquiry.id = data.data[0].id;
+          setTimeout(() => {
+            this.alertCtrl.create({
+              subTitle: '亲,我们将在尽快把结果发送到您的邮箱,请注意查收~',
+              buttons: [
+                'OK'
+              ]
+            }).present();
+          }, 200);
+        },
+        err => console.error(err),
+        () => console.log('Authentication Complete')
+      );
+    });
   }
 
 
@@ -47,7 +66,6 @@ export class EnquiryPage {
   }
 
   submitEnquiry() {
-
     if (this.validate()) {
       if (this.session.requireCustomInfo()) {
         this.alertCtrl.create({
@@ -73,7 +91,7 @@ export class EnquiryPage {
   }
 
   validate() {
-    if (this.enquiry.id > 0) {
+    if (this.enquiry.id) {
       this.alertCtrl.create({
         // title: 'New Friend!',
         subTitle: '请不要重复提交!',
@@ -104,28 +122,5 @@ export class EnquiryPage {
 
 
     return true;
-  }
-
-  saveEnquiry() {
-    this.dataService.write({
-      func: "enquiry",
-      operation: 2,
-      data: [this.enquiry]
-    }).subscribe(
-      (data) => {
-        this.enquiry.id = data.data[0].id;
-        this.events.publish(this.sign);
-        setTimeout(() => {
-          this.alertCtrl.create({
-            subTitle: '亲,我们将在30分钟内把结果发送到您的邮箱,请注意查收~',
-            buttons: [
-              'OK'
-            ]
-          }).present();
-        }, 200);
-      },
-      err => console.error(err),
-      () => console.log('Authentication Complete')
-    );
   }
 }

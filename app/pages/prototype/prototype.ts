@@ -19,6 +19,8 @@ export class PrototypePage {
 
   private session: Session;
 
+  private submitInprogress: boolean = false;
+
   private order: Order = {
     product: {id: 0},
     quantity: 1,
@@ -39,39 +41,39 @@ export class PrototypePage {
     this.session = navParams.get('session');
     this.order.user = this.session.user;
     this.order.product.id = navParams.get('product').id;
+    this.order.product.remoteId = navParams.get('product').remoteId;
+
+
+    events.unsubscribe(this.sign, () => {
+    });
+
     events.subscribe(this.sign, () => {
       setTimeout(() => {
-        this.saveOrder();
+        this.dataService.write({
+          func: "order",
+          operation: 2,
+          data: [this.order]
+        }).subscribe(
+          (data) => {
+            let alert = this.alertCtrl.create({
+              subTitle: '样机申请提交成功,请到我的页面订单列表中查看！',
+              buttons: [{
+                text: 'OK',
+                handler: () => {
+
+                  alert.dismiss();
+                  this.navCtrl.pop();
+                }
+              }
+              ]
+            });
+            alert.present();
+          },
+          err => console.error(err),
+          () => this.submitInprogress = false
+        );
       }, 200);
     });
-  }
-
-  saveOrder() {
-    if (this.validate()) {
-      this.dataService.write({
-        func: "order",
-        operation: 2,
-        data: [this.order]
-      }).subscribe(
-        (data) => {
-          let alert = this.alertCtrl.create({
-            subTitle: '样机申请提交成功,请到我的页面订单列表中查看！',
-            buttons: [{
-              text: 'OK',
-              handler: () => {
-
-                alert.dismiss();
-                this.navCtrl.pop();
-              }
-            }
-            ]
-          });
-          alert.present();
-        },
-        err => console.error(err),
-        () => console.log('Authentication Complete')
-      );
-    }
   }
 
   validate(): boolean {
@@ -89,24 +91,52 @@ export class PrototypePage {
   }
 
   submit() {
-    if (this.session.requireCustomInfo()) {
-      this.alertCtrl.create({
-        subTitle: '提交前请您先完善您所在的公司信息',
-        buttons: [
-          {
-            text: '取消',
-            role: 'cancel'
-          },
-          {
-            text: '去完善',
-            handler: () => {
-              this.modalCtrl.create(CustomInfoPage, {sign: this.sign, session: this.session}).present();
+    if (this.submitInprogress) {
+      return;
+    }
+    this.submitInprogress = true;
+    if (this.validate()) {
+      if (this.session.requireCustomInfo()) {
+        this.alertCtrl.create({
+          subTitle: '提交前请您先完善您所在的公司信息',
+          buttons: [
+            {
+              text: '取消',
+              role: 'cancel'
+            },
+            {
+              text: '去完善',
+              handler: () => {
+                this.modalCtrl.create(CustomInfoPage, {sign: this.sign, session: this.session}).present();
+              }
             }
-          }
-        ]
-      }).present();
-    } else {
-      this.saveOrder();
+          ]
+        }).present();
+      } else {
+        this.dataService.write({
+          func: "order",
+          operation: 2,
+          data: [this.order]
+        }).subscribe(
+          (data) => {
+            let alert = this.alertCtrl.create({
+              subTitle: '样机申请提交成功,请到我的页面订单列表中查看！',
+              buttons: [{
+                text: 'OK',
+                handler: () => {
+
+                  alert.dismiss();
+                  this.navCtrl.pop();
+                }
+              }
+              ]
+            });
+            alert.present();
+          },
+          err => console.error(err),
+          () => this.submitInprogress = false
+        );
+      }
     }
   }
 }

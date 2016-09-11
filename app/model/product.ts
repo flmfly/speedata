@@ -14,5 +14,7 @@ export interface Product {
 
   spec?: string;
 
+  remoteId?: number;
+
 
 }

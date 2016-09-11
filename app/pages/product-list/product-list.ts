@@ -37,7 +37,7 @@ export class ProductListPage {
           } else {
             picUrl = Global.picBaseUrl + el.attachment[0].url;
           }
-          this.productList.push({name: el.name, id: el.id, picUrl: picUrl});
+          this.productList.push({name: el.name, id: el.id, picUrl: picUrl, remoteId: el.remoteId});
         });
       },
       err => console.error(err),

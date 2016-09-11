@@ -55,7 +55,8 @@ export class ProductDetailPage {
           name: temp.name,
           pics: pics,
           content: temp.intro,
-          spec: temp.spec
+          spec: temp.spec,
+          remoteId: temp.remoteId
         };
       },
       err => console.error(err),

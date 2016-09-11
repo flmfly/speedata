@@ -10,7 +10,7 @@
     <ion-title>产品订单</ion-title>
 
     <ion-buttons end>
-      <button (click)="submit()">
+      <button (click)="submit()" [disabled]="submitInprogress">
         <span primary>提交</span>
       </button>
     </ion-buttons>
@@ -24,35 +24,35 @@
   <ion-list>
     <ion-item>
       <ion-label primary stacked>产品型号</ion-label>
-      <ion-input type="text" value="KT40-SE45SR" placeholder=""></ion-input>
+      <ion-input type="text" value="{{order.product.name}}" disabled></ion-input>
     </ion-item>
     <ion-item>
       <ion-label primary stacked>配送方式</ion-label>
-      <ion-input type="text" value="顺丰快递" placeholder=""></ion-input>
+      <ion-input type="text" value="顺丰快递" disabled></ion-input>
     </ion-item>
     <ion-item>
       <ion-label primary stacked>发货周期</ion-label>
-      <ion-input type="text" value="3个工作日" placeholder=""></ion-input>
+      <ion-input type="text" value="3个工作日" disabled></ion-input>
     </ion-item>
     <ion-item>
       <ion-label primary stacked>数量</ion-label>
-      <ion-input type="number" value="1" placeholder=""></ion-input>
+      <ion-input type="number" [(ngModel)]="order.quantity" placeholder=""></ion-input>
     </ion-item>
     <ion-item>
       <ion-label primary stacked>收货人 <ion-icon name="star"></ion-icon></ion-label>
-      <ion-input type="email" placeholder=""></ion-input>
+      <ion-input type="text" [(ngModel)]="order.receiver" placeholder=""></ion-input>
     </ion-item>
     <ion-item>
       <ion-label primary stacked>收货人电话 <ion-icon name="star"></ion-icon></ion-label>
-      <ion-input type="number" placeholder=""></ion-input>
+      <ion-input type="text" [(ngModel)]="order.receiverPhone" placeholder=""></ion-input>
     </ion-item>
     <ion-item>
       <ion-label primary stacked>收货地址 <ion-icon name="star"></ion-icon></ion-label>
-      <ion-textarea rows="4" placeholder=""></ion-textarea>
+      <ion-textarea rows="4" [(ngModel)]="order.address" placeholder=""></ion-textarea>
     </ion-item>
     <ion-item>
       <ion-label primary stacked>订单备注</ion-label>
-      <ion-textarea rows="4" placeholder=""></ion-textarea>
+      <ion-textarea rows="4" [(ngModel)]="order.remark" placeholder=""></ion-textarea>
     </ion-item>
   </ion-list>
 </ion-content>

@@ -9,7 +9,7 @@
   <ion-navbar>
     <ion-title>样机申请</ion-title>
     <ion-buttons end>
-      <button (click)="submit()">
+      <button (click)="submit()" [disabled]="submitInprogress">
         <span primary>提交</span>
       </button>
     </ion-buttons>

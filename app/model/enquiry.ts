@@ -3,7 +3,7 @@
  */
 
 export interface Enquiry {
-  id: number;
+  id?: number;
   project: string;
   func?: string;
   quantity?: number;
