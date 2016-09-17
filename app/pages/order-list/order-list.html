@@ -15,39 +15,31 @@
 
 <ion-content no-padding class="order-list">
   <ion-list>
-    <ion-item-sliding>
-      <button ion-item (click)="nav2OrderDetail()">
+    <!--<ion-item-sliding>-->
+      <button ion-item *ngFor="let o of orders" (click)="nav2OrderDetail(o.id)">
         <ion-thumbnail item-left>
-          <img src="img/products/kt40.jpg">
+          <img src="{{o.product.picUrl}}">
         </ion-thumbnail>
-        <h2>KT40Q手持终端反对撒发的顺丰撒放大舒服的</h2>
-        <p>共1件</p>
-        <ion-note item-right>运输中</ion-note>
+        <h2>{{o.product.name}}</h2>
+        <p>共{{o.quantity}}件</p>
+        <ion-note item-right>{{o.state}}</ion-note>
       </button>
-      <ion-item-options side="left">
-        <button primary>
-          <ion-icon name="text"></ion-icon>
-          Text
-        </button>
-        <button secondary>
-          <ion-icon name="call"></ion-icon>
-          Call
-        </button>
-      </ion-item-options>
-      <ion-item-options side="right">
-        <button primary>
-          取消
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
-    <button ion-item (click)="nav2OrderDetail()">
-      <ion-thumbnail item-left>
-        <img src="img/products/kt45.jpg">
-      </ion-thumbnail>
-      <h2>KT45Q手持终端</h2>
-      <p>共1件</p>
-      <ion-note item-right>已完成</ion-note>
-    </button>
+      <!--<ion-item-options side="left">-->
+        <!--<button primary>-->
+          <!--<ion-icon name="text"></ion-icon>-->
+          <!--Text-->
+        <!--</button>-->
+        <!--<button secondary>-->
+          <!--<ion-icon name="call"></ion-icon>-->
+          <!--Call-->
+        <!--</button>-->
+      <!--</ion-item-options>-->
+      <!--<ion-item-options side="right">-->
+        <!--<button primary>-->
+          <!--取消-->
+        <!--</button>-->
+      <!--</ion-item-options>-->
+    <!--</ion-item-sliding>-->
   </ion-list>
 
 </ion-content>

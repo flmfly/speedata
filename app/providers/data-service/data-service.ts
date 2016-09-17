@@ -12,9 +12,28 @@ import {Observable} from "rxjs";
 @Injectable()
 export class DataService {
 
-  private url: string = 'http://localhost:8080/s/ws/api/';
+  private rootUrl: string = 'http://nas.iflmy.com:8080/s';
+  private url: string = this.rootUrl + '/ws/api/';
 
   constructor(private http: Http) {
+  }
+
+  public select(query: any): Observable<any> {
+    let headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+    return this.http
+      .post(this.rootUrl + '/shop/select', JSON.stringify(query), {headers: headers})
+      .map(res => res.json());
+    //
+    // this.http
+    //   .post(this.url, JSON.stringify(query), {headers: headers})
+    //   .map(res => res.json())
+    //   .subscribe(
+    //     data => console.log(data),
+    //     err => console.error(err),
+    //     () => console.log('Authentication Complete')
+    //   );
   }
 
   public read(query: any): Observable<any> {

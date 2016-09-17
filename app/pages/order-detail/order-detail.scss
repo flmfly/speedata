@@ -3,5 +3,10 @@
   ion-note {
     color: map_get($colors, favorite);
   }
-
+  ion-note {
+    font-size: 14px;
+    //align-self: flex-start;
+    //margin-top: 14px;
+    color: map_get($colors, primary);
+  }
 }

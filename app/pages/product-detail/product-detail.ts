@@ -26,10 +26,18 @@ export class ProductDetailPage {
 
   private seg: string = 'content';
 
+  private isShown: boolean = false;
+
   constructor(private nav: NavController,
               private session: Session,
               private navParam: NavParams,
               private dataService: DataService) {
+    let shown = navParam.get("shown");
+    if (shown) {
+      this.isShown = true;
+      this.footerIsShown = false;
+    }
+
     dataService.read({
       func: "product",
       query: {"id": {val: navParam.get('pId')}},
@@ -67,12 +75,14 @@ export class ProductDetailPage {
 
   onPageDidEnter() {
     this.segmentIsShown = true;
-    this.footerIsShown = true;
+    if (!this.isShown)
+      this.footerIsShown = true;
   }
 
   onPageWillLeave() {
     this.segmentIsShown = false;
-    this.footerIsShown = false;
+    if (!this.isShown)
+      this.footerIsShown = false;
   }
 
   nav2Prototype() {

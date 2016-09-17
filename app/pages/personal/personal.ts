@@ -27,11 +27,11 @@ export class PersonalPage {
   }
 
   nav2PrototypeList() {
-    this.nav.push(OrderListPage);
+    this.nav.parent.parent.push(OrderListPage, {isPrototype: true});
   }
 
   nav2OrderList() {
-    this.nav.push(OrderListPage);
+    this.nav.parent.parent.push(OrderListPage, {isPrototype: false});
   }
 
   NIY() {
