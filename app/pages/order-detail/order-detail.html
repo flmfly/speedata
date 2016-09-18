@@ -22,7 +22,7 @@
       <ion-list-header>
         订单状态
       </ion-list-header>
-      <button ion-item (click)="nav2OrderStatus()">
+      <button ion-item (click)="nav2OrderStatus(order.id)">
         <ion-icon name=""></ion-icon>
         {{order.state}}
         <ion-note item-right>追踪</ion-note>

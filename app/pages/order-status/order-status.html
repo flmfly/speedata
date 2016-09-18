@@ -15,36 +15,14 @@
 
 <ion-content no-padding class="order-status">
   <ul class="timeline">
-    <li>
+    <li *ngFor="let s of states">
       <div class="timeline-thumb bg-color-blue timeline-icon">
         <ion-icon name="delivery" primary></ion-icon>
       </div>
       <div class="timeline-item">
-        <h4>完成</h4>
+        <h4>{{s.state}}</h4>
         <div class="timeline-stats">
-          <ion-icon name="today"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;2016-08-08 15:34:56
-        </div>
-      </div>
-    </li>
-    <li>
-      <div class="timeline-thumb bg-color-blue timeline-icon">
-        <ion-icon name="delivery" primary></ion-icon>
-      </div>
-      <div class="timeline-item">
-        <h4>运输中</h4>
-        <div class="timeline-stats">
-          <ion-icon name="today"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;2016-08-07 07:34:56
-        </div>
-      </div>
-    </li>
-    <li>
-      <div class="timeline-thumb bg-color-blue timeline-icon">
-        <ion-icon name="delivery" primary></ion-icon>
-      </div>
-      <div class="timeline-item">
-        <h4>出库</h4>
-        <div class="timeline-stats">
-          <ion-icon name="today"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;2016-08-06 12:34:56
+          <ion-icon name="today"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;{{s.recordTime}}
         </div>
       </div>
     </li>

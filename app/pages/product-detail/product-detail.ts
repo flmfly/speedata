@@ -92,4 +92,9 @@ export class ProductDetailPage {
   nav2Order() {
     this.nav.push(OrderPage, {session: this.session, product: this.product});
   }
+
+  ionSelect(){
+    console.log(10);
+    document.getElementsByTagName("scroll-content")[0].scrollTop = 0;
+  }
 }

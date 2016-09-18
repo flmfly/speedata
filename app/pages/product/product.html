@@ -10,16 +10,17 @@
   <ion-grid>
     <ion-row *ngFor="let row of categories">
       <ion-col width-50 *ngFor="let c of row">
-        <ion-card no-margin (click)="nav2ProductList(c.id);">
+        <ion-card no-margin>
           <ion-card-header>
             {{c.name}}
           </ion-card-header>
           <ion-list no-lines class="border-top-grey">
-            <ion-item>
+            <button ion-item (click)="nav2ProductList(c.id);">
               <img src="{{c.picUrl}}"/>
-            </ion-item>
+            </button>
           </ion-list>
         </ion-card>
+
       </ion-col>
     </ion-row>
   </ion-grid>

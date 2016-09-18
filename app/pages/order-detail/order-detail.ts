@@ -46,8 +46,8 @@ export class OrderDetailPage {
     );
   }
 
-  nav2OrderStatus() {
-    this.navCtrl.push(OrderStatusPage);
+  nav2OrderStatus(id: number) {
+    this.navCtrl.push(OrderStatusPage, {id: id});
   }
 
   nav2ProductDetail(){

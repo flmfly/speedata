@@ -8,10 +8,10 @@
 
   <ion-navbar>
     <ion-segment [(ngModel)]="seg" *ngIf="segmentIsShown">
-      <ion-segment-button value="content">
+      <ion-segment-button value="content" (ionSelect)="ionSelect()">
         商品
       </ion-segment-button>
-      <ion-segment-button value="spec">
+      <ion-segment-button value="spec" (ionSelect)="ionSelect()">
         规格参数
       </ion-segment-button>
     </ion-segment>
@@ -21,7 +21,7 @@
 
 
 <ion-content no-padding class="product-detail">
-  <div [ngSwitch]="seg">
+  <div [ngSwitch]="seg" id="segContent">
     <div *ngSwitchCase="'content'">
       <ion-slides pager style="height:auto;border-bottom: solid 1px #f4f4f4">
         <ion-slide *ngFor="let u of product.pics">
