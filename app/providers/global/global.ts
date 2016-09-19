@@ -11,10 +11,10 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class Global {
 
-  public static rootUrl: string = "http://nas.iflmy.com:8080/";
+  public static rootUrl: string = "http://nas.iflmy.com:18080/";
   public static picBaseUrl: string = Global.rootUrl + 'func/api/productcategory/file?fileName=&category=&path=';
 
-  public static blankPic: string = 'http://nas.iflmy.com:8080/w/img/no-image.png';
+  public static blankPic: string = 'http://nas.iflmy.com:18080/w/img/no-image.png';
 
   constructor(private http: Http) {
   }

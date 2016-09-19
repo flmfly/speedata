@@ -12,7 +12,7 @@ import {Observable} from "rxjs";
 @Injectable()
 export class DataService {
 
-  private rootUrl: string = 'http://nas.iflmy.com:8080';
+  private rootUrl: string = 'http://nas.iflmy.com:18080';
   private url: string = this.rootUrl + '/ws/api/';
 
   constructor(private http: Http) {
