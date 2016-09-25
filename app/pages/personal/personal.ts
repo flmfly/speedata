@@ -4,6 +4,7 @@ import {ProfilePage} from "../profile/profile";
 import {OrderListPage} from "../order-list/order-list";
 import {Session} from "../../providers/session/session";
 import {User} from "../../model/user";
+import {Global} from "../../providers/global/global";
 
 /*
  Generated class for the PersonalPage page.
@@ -16,6 +17,10 @@ import {User} from "../../model/user";
 })
 export class PersonalPage {
 
+  onPageWillEnter() {
+    //设置页面标题
+    Global.changeTitle("个人中心");
+  }
 
   constructor(private nav: NavController,
               private alertCtrl: AlertController,

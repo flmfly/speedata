@@ -3,6 +3,7 @@ import {NavController} from 'ionic-angular';
 import {Company} from "../../model/company";
 import {DataService} from "../../providers/data-service/data-service";
 import {CompanyDetailPage} from "../company-detail/company-detail";
+import {Global} from "../../providers/global/global";
 
 /*
  Generated class for the CompanyPage page.
@@ -14,6 +15,11 @@ import {CompanyDetailPage} from "../company-detail/company-detail";
   templateUrl: 'build/pages/company/company.html',
 })
 export class CompanyPage {
+
+  onPageWillEnter() {
+    //设置页面标题
+    Global.changeTitle("公司风采");
+  }
 
   private contents: Company[] = [];
 
@@ -35,4 +41,8 @@ export class CompanyPage {
     this.navCtrl.push(CompanyDetailPage, {c: c});
   }
 
+  back() {
+    Global.changeTitle("思必拓微信商城");
+    this.navCtrl.pop();
+  }
 }

@@ -3,6 +3,7 @@ import {NavController, ModalController} from 'ionic-angular';
 import {TradeSubPage} from '../trade-sub/trade-sub';
 import {DataService} from "../../providers/data-service/data-service";
 import {Trade} from "../../model/trade";
+import {Global} from "../../providers/global/global";
 
 /*
  Generated class for the TradeCategoryPage page.
@@ -14,6 +15,11 @@ import {Trade} from "../../model/trade";
   templateUrl: 'build/pages/trade-category/trade-category.html'
 })
 export class TradeCategoryPage {
+
+  onPageWillEnter() {
+    //设置页面标题
+    Global.changeTitle("行业应用");
+  }
 
   private categories: Trade[] = [];
 
@@ -34,6 +40,11 @@ export class TradeCategoryPage {
 
   nav2TradeSubPage(trade: Trade) {
     this.nav.push(TradeSubPage, {trade: trade});
+  }
+
+  back() {
+    Global.changeTitle("思必拓微信商城");
+    this.nav.pop();
   }
 }
 

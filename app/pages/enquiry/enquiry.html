@@ -4,40 +4,45 @@
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<!--<ion-header>-->
 
-  <ion-navbar>
-    <ion-title>快速报价服务</ion-title>
-    <ion-buttons end>
-      <button block (click)="submitEnquiry()">提交</button>
-    </ion-buttons>
-  </ion-navbar>
+  <!--<ion-navbar>-->
+    <!--<ion-title>快速报价服务</ion-title>-->
+    <!--<ion-buttons end>-->
+      <!--<button block (click)="submitEnquiry()">提交</button>-->
+    <!--</ion-buttons>-->
+  <!--</ion-navbar>-->
 
-</ion-header>
+<!--</ion-header>-->
 
 
 <ion-content no-padding class="enquiry">
   <ion-list>
     <ion-item>
       <ion-label primary stacked>功能描述</ion-label>
-      <ion-textarea rows="4" [(ngModel)]="enquiry.func" placeholder="请您将功能描述清楚，以便于销售人员为您报价!"></ion-textarea>
+      <ion-textarea rows="4" [(ngModel)]="enquiry.func" placeholder="请您将功能描述清楚，以便于销售人员为您报价!" [disabled]="submit"></ion-textarea>
     </ion-item>
     <ion-item>
       <ion-label primary stacked>项目名称 <ion-icon name="star"></ion-icon></ion-label>
-      <ion-input type="email" [(ngModel)]="enquiry.project" placeholder=""></ion-input>
+      <ion-input type="email" [(ngModel)]="enquiry.project" placeholder="" [disabled]="submit"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label primary stacked>需求数量 <ion-icon name="star"></ion-icon></ion-label>
-      <ion-input type="number" [(ngModel)]="enquiry.quantity" placeholder=""></ion-input>
+      <ion-input type="number" [(ngModel)]="enquiry.quantity" placeholder="" [disabled]="submit"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label primary stacked>联系电话 <ion-icon name="star"></ion-icon></ion-label>
+      <ion-input type="email" [(ngModel)]="enquiry.email" placeholder="请填写您的联系电话" [disabled]="submit"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label primary stacked>是否定制</ion-label>
-      <ion-toggle checked="false" [(ngModel)]="enquiry.isCustom"></ion-toggle>
-    </ion-item>
-    <ion-item>
-      <ion-label primary stacked>邮箱 <ion-icon name="star"></ion-icon></ion-label>
-      <ion-input type="email" [(ngModel)]="enquiry.email" placeholder="请填写接收报价单的邮箱"></ion-input>
+      <ion-toggle checked="false" [(ngModel)]="enquiry.isCustom" [disabled]="submit"></ion-toggle>
     </ion-item>
   </ion-list>
-
+  <div padding style="padding-top: 0;padding-bottom:0">
+    <button block background no-margin (click)="submitEnquiry()" [disabled]="submit">
+      {{btnText}}
+    </button>
+  </div>
+  <div padding style="font-size:12px;color:#999" text-center>提交后，我们将在10分钟之内和您联系，请您保持电话畅通！</div>
 </ion-content>

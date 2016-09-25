@@ -97,4 +97,8 @@ export class ProductDetailPage {
     console.log(10);
     document.getElementsByTagName("scroll-content")[0].scrollTop = 0;
   }
+
+  back() {
+    this.nav.pop();
+  }
 }

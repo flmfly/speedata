@@ -3,6 +3,7 @@ import {NavController, ModalController, Events} from 'ionic-angular';
 import {CustomInfoPage} from "../custom-info/custom-info";
 import {Session} from "../../providers/session/session";
 import {User} from "../../model/user";
+import {Global} from "../../providers/global/global";
 
 /*
  Generated class for the ProfilePage page.
@@ -14,6 +15,13 @@ import {User} from "../../model/user";
   templateUrl: 'build/pages/profile/profile.html',
 })
 export class ProfilePage {
+
+
+  onPageWillEnter() {
+    //设置页面标题
+    Global.changeTitle("公司信息");
+  }
+
 
   private sign: string = 'ProfilePage';
 
@@ -74,4 +82,8 @@ export class ProfilePage {
     this.modalCtrl.create(CustomInfoPage, {sign: this.sign, session: this.session}).present();
   }
 
+  back() {
+    Global.changeTitle("个人中心");
+    this.navCtrl.pop();
+  }
 }

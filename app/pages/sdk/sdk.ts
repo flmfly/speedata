@@ -3,6 +3,7 @@ import {NavController, AlertController} from 'ionic-angular';
 import {Product} from "../../model/product";
 import {DataService} from "../../providers/data-service/data-service";
 import {Session} from "../../providers/session/session";
+import {Global} from "../../providers/global/global";
 
 
 /*
@@ -23,6 +24,11 @@ export class SdkPage {
   private email: string;
 
   private sdkRequestId: number;
+
+  onPageWillEnter() {
+    //设置页面标题
+    Global.changeTitle("SDK下载");
+  }
 
   constructor(private navCtrl: NavController,
               private dataService: DataService,
@@ -97,5 +103,10 @@ export class SdkPage {
 
   onPageWillLeave() {
     this.sdkRequestId = null;
+  }
+
+  back() {
+    Global.changeTitle("思必拓微信商城");
+    this.navCtrl.pop();
   }
 }

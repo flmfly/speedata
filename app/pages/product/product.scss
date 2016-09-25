@@ -61,6 +61,8 @@
   }
 
   ion-card-header {
-    color: map-get($colors, primary);
+    background-color: rgba(198,54,47,0.8);
+    color: white;
+    padding: 12px;
   }
 }

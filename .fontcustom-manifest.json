@@ -1,13 +1,13 @@
 {
   "checksum": {
-    "previous": "e9ea7ea4bd85fbeb197c6128066409e36dde1675f7d1f773392cee03aec4ad8f",
-    "current": "e9ea7ea4bd85fbeb197c6128066409e36dde1675f7d1f773392cee03aec4ad8f"
+    "previous": "3d371fe296dfc80cfb1f8436ed20146bb8e9c34de3094e7b4f9d2ed260c60550",
+    "current": "3d371fe296dfc80cfb1f8436ed20146bb8e9c34de3094e7b4f9d2ed260c60550"
   },
   "fonts": [
-    "./www/fontcustom/output/icons_e9ea7ea4bd85fbeb197c6128066409e3.ttf",
-    "./www/fontcustom/output/icons_e9ea7ea4bd85fbeb197c6128066409e3.svg",
-    "./www/fontcustom/output/icons_e9ea7ea4bd85fbeb197c6128066409e3.woff",
-    "./www/fontcustom/output/icons_e9ea7ea4bd85fbeb197c6128066409e3.eot"
+    "./www/fontcustom/output/icons_3d371fe296dfc80cfb1f8436ed20146b.ttf",
+    "./www/fontcustom/output/icons_3d371fe296dfc80cfb1f8436ed20146b.svg",
+    "./www/fontcustom/output/icons_3d371fe296dfc80cfb1f8436ed20146b.woff",
+    "./www/fontcustom/output/icons_3d371fe296dfc80cfb1f8436ed20146b.eot"
   ],
   "glyphs": {
     "ios-assistant": {
@@ -21,6 +21,10 @@
     "ios-buy": {
       "codepoint": 61698,
       "source": "./fontcustom/input/ios-buy.svg"
+    },
+    "ios-cancel": {
+      "codepoint": 61736,
+      "source": "./fontcustom/input/ios-cancel.svg"
     },
     "ios-clipboard": {
       "codepoint": 61723,
@@ -50,6 +54,10 @@
       "codepoint": 61702,
       "source": "./fontcustom/input/ios-download-outline.svg"
     },
+    "ios-edit": {
+      "codepoint": 61735,
+      "source": "./fontcustom/input/ios-edit.svg"
+    },
     "ios-enquiry": {
       "codepoint": 61703,
       "source": "./fontcustom/input/ios-enquiry.svg"
@@ -69,6 +77,14 @@
     "ios-infrared": {
       "codepoint": 61707,
       "source": "./fontcustom/input/ios-infrared.svg"
+    },
+    "ios-kindle": {
+      "codepoint": 61728,
+      "source": "./fontcustom/input/ios-kindle.svg"
+    },
+    "ios-kindle-outline": {
+      "codepoint": 61729,
+      "source": "./fontcustom/input/ios-kindle-outline.svg"
     },
     "ios-medal": {
       "codepoint": 61708,
@@ -94,6 +110,10 @@
       "codepoint": 61713,
       "source": "./fontcustom/input/ios-rfid.svg"
     },
+    "ios-save": {
+      "codepoint": 61737,
+      "source": "./fontcustom/input/ios-save.svg"
+    },
     "ios-scanner": {
       "codepoint": 61714,
       "source": "./fontcustom/input/ios-scanner.svg"
@@ -106,13 +126,29 @@
       "codepoint": 61716,
       "source": "./fontcustom/input/ios-sdk.svg"
     },
+    "ios-search": {
+      "codepoint": 61734,
+      "source": "./fontcustom/input/ios-search.svg"
+    },
     "ios-select": {
       "codepoint": 61717,
       "source": "./fontcustom/input/ios-select.svg"
     },
+    "ios-smartphone": {
+      "codepoint": 61730,
+      "source": "./fontcustom/input/ios-smartphone.svg"
+    },
+    "ios-smartphone-outline": {
+      "codepoint": 61731,
+      "source": "./fontcustom/input/ios-smartphone-outline.svg"
+    },
     "ios-star": {
       "codepoint": 61727,
       "source": "./fontcustom/input/ios-star.svg"
+    },
+    "ios-support-outline": {
+      "codepoint": 61733,
+      "source": "./fontcustom/input/ios-support-outline.svg"
     },
     "ios-temperature": {
       "codepoint": 61718,

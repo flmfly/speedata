@@ -4,6 +4,7 @@ import {ProductListPage} from "../product-list/product-list";
 import {DataService} from "../../providers/data-service/data-service";
 import {ProductCategory} from "../../model/product-category";
 import {Global} from "../../providers/global/global";
+import {ProductCategoryPage} from "../product-category/product-category";
 
 /*
  Generated class for the ProductPage page.
@@ -16,6 +17,11 @@ import {Global} from "../../providers/global/global";
 })
 export class ProductPage {
   private categories: ProductCategory[][] = [];
+
+  onPageWillEnter() {
+    //设置页面标题
+    Global.changeTitle("产品展示");
+  }
 
   constructor(private nav: NavController,
               private dataService: DataService) {
@@ -50,7 +56,7 @@ export class ProductPage {
     );
   }
 
-  nav2ProductList(cId: number) {
-    this.nav.parent.parent.push(ProductListPage, {cId: cId});
+  nav2ProductCategory(c: ProductCategory) {
+    this.nav.parent.parent.push(ProductCategoryPage, {c: c});
   }
 }

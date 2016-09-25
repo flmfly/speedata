@@ -15,10 +15,15 @@ import {Session} from "../../providers/session/session";
 export class HomePage {
   private pics: string[] = [];
 
+  onPageWillEnter() {
+    //设置页面标题
+    Global.changeTitle("思必拓微信商城");
+  }
+
   constructor(private nav: NavController,
               private dataService: DataService,
               private session: Session) {
-    session.checkUser();
+    session.init();
     dataService.read({
       func: "promotion",
       query: {},

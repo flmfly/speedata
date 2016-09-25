@@ -107,7 +107,8 @@ export class PrototypePage {
             {
               text: '去完善',
               handler: () => {
-                this.modalCtrl.create(CustomInfoPage, {sign: this.sign, session: this.session}).present();
+                // this.modalCtrl.create(CustomInfoPage, {sign: this.sign, session: this.session}).present();
+                this.navCtrl.push(CustomInfoPage, {sign: this.sign, session: this.session});
               }
             }
           ]

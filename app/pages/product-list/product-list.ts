@@ -67,4 +67,8 @@ export class ProductListPage {
   nav2ProductDetail(pId: number) {
     this.navCtrl.push(ProductDetailPage, {pId: pId});
   }
+
+  back() {
+    this.navCtrl.pop();
+  }
 }

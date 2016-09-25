@@ -7,15 +7,16 @@
 
 
 <ion-content no-padding class="product">
+  <div style="height:8px;">&nbsp;</div>
   <ion-grid>
     <ion-row *ngFor="let row of categories">
-      <ion-col width-50 *ngFor="let c of row">
+      <ion-col width-50 *ngFor="let c of row" padding>
         <ion-card no-margin>
           <ion-card-header>
             {{c.name}}
           </ion-card-header>
           <ion-list no-lines class="border-top-grey">
-            <button ion-item (click)="nav2ProductList(c.id);">
+            <button ion-item (click)="nav2ProductCategory(c);">
               <img src="{{c.picUrl}}"/>
             </button>
           </ion-list>

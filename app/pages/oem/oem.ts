@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {NavController, ModalController} from 'ionic-angular';
 import {OemDetailPage} from "../oem-detail/oem-detail";
 import {DataService} from "../../providers/data-service/data-service";
+import {Global} from "../../providers/global/global";
 
 /*
  Generated class for the OemPage page.
@@ -13,6 +14,12 @@ import {DataService} from "../../providers/data-service/data-service";
   templateUrl: 'build/pages/oem/oem.html',
 })
 export class OemPage {
+
+  onPageWillEnter() {
+    //设置页面标题
+    Global.changeTitle("OEM/ODM");
+  }
+
 
   private oems: any[] = [];
 
@@ -38,5 +45,10 @@ export class OemPage {
   nav2OemDetailPage(id: number) {
 
     this.navCtrl.push(OemDetailPage, {id: id});
+  }
+
+  back() {
+    Global.changeTitle("思必拓微信商城");
+    this.navCtrl.pop();
   }
 }

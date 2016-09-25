@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Http, Headers, Response} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Observable} from "rxjs";
+import {Global} from "../global/global";
 
 /*
  Generated class for the DataService provider.
@@ -12,10 +13,24 @@ import {Observable} from "rxjs";
 @Injectable()
 export class DataService {
 
-  private rootUrl: string = 'http://nas.iflmy.com:18080';
-  private url: string = this.rootUrl + '/ws/api/';
+  private url: string = Global.rootUrl + 'ws/api/';
 
   constructor(private http: Http) {
+  }
+
+  public getOpenid(query: any): Observable<any> {
+    return this.http
+      .get(Global.rootUrl + 'shop/openid?code=' + query)
+      .map(res => res.json());
+    //
+    // this.http
+    //   .post(this.url, JSON.stringify(query), {headers: headers})
+    //   .map(res => res.json())
+    //   .subscribe(
+    //     data => console.log(data),
+    //     err => console.error(err),
+    //     () => console.log('Authentication Complete')
+    //   );
   }
 
   public select(query: any): Observable<any> {
@@ -23,7 +38,7 @@ export class DataService {
       'Content-Type': 'application/json'
     });
     return this.http
-      .post(this.rootUrl + '/shop/select', JSON.stringify(query), {headers: headers})
+      .post(Global.rootUrl + 'shop/select', JSON.stringify(query), {headers: headers})
       .map(res => res.json());
     //
     // this.http

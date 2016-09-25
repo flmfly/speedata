@@ -3,6 +3,7 @@ import {NavController, AlertController} from 'ionic-angular';
 import {ProductDetailPage} from '../product-detail/product-detail';
 import {ProductListPage} from "../product-list/product-list";
 import {DataService} from "../../providers/data-service/data-service";
+import {Global} from "../../providers/global/global";
 /*
  Generated class for the SelectPage page.
 
@@ -13,6 +14,11 @@ import {DataService} from "../../providers/data-service/data-service";
   templateUrl: 'build/pages/select/select.html'
 })
 export class SelectPage {
+
+  onPageWillEnter() {
+    //设置页面标题
+    Global.changeTitle("三分钟选型");
+  }
 
   private tags: any[] = [];
 
@@ -60,5 +66,10 @@ export class SelectPage {
 
   cancel(id: any) {
     delete this.selected[id];
+  }
+
+  back() {
+    Global.changeTitle("思必拓微信商城");
+    this.nav.pop();
   }
 }

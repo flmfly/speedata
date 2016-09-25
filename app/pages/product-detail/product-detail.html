@@ -6,16 +6,16 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-toolbar>
     <ion-segment [(ngModel)]="seg" *ngIf="segmentIsShown">
       <ion-segment-button value="content" (ionSelect)="ionSelect()">
-        商品
+        商品介绍
       </ion-segment-button>
       <ion-segment-button value="spec" (ionSelect)="ionSelect()">
         规格参数
       </ion-segment-button>
     </ion-segment>
-  </ion-navbar>
+  </ion-toolbar>
 
 </ion-header>
 
@@ -32,6 +32,9 @@
     </div>
     <div padding [innerHTML]="product.spec" *ngSwitchCase="'spec'"></div>
   </div>
+  <button fab fab-bottom fab-fixed fab-left background (click)="back()" style="margin-bottom: 36px;">
+    <ion-icon name="undo"></ion-icon>
+  </button>
 </ion-content>
 
 <ion-footer class="product-detail" *ngIf="footerIsShown">

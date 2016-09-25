@@ -57,4 +57,8 @@ export class OrderListPage {
   nav2OrderDetail(id: number) {
     this.navCtrl.push(OrderDetailPage, {id: id});
   }
+
+  back() {
+    this.navCtrl.pop();
+  }
 }

@@ -4,6 +4,7 @@ import {Session} from "../../providers/session/session";
 import {User} from "../../model/user";
 import {Trade} from "../../model/trade";
 import {DataService} from "../../providers/data-service/data-service";
+import {Global} from "../../providers/global/global";
 
 /*
  Generated class for the CustomInfoPage page.
@@ -117,6 +118,7 @@ export class CustomInfoPage {
   }
 
   dismiss() {
+    this.events.publish('');
     this.viewCtrl.dismiss();
   }
 }

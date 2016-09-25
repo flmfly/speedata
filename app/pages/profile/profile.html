@@ -4,24 +4,12 @@
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>客户信息</ion-title>
-    <ion-buttons end>
-      <button block (click)="nav2CustomInfo()">修改</button>
-    </ion-buttons>
-  </ion-navbar>
-
-</ion-header>
-
-
 <ion-content no-padding>
   <ion-list>
-    <span ion-item>
-      微信号
-      <span item-right class="color-light">{{user.account}}</span>
-    </span>
+    <!--<span ion-item>-->
+      <!--微信号-->
+      <!--<span item-right class="color-light">{{user.account}}</span>-->
+    <!--</span>-->
     <span ion-item (click)="nav2ResetMobile()">
       手机号
       <span item-right class="color-light">{{user.phone}}</span>
@@ -47,4 +35,12 @@
       <span item-right class="color-light">{{user.address}}</span>
     </span>
   </ion-list>
+
+  <button fab fab-bottom fab-fixed fab-center favorite (click)="nav2CustomInfo()">
+    <ion-icon name="edit"></ion-icon>
+  </button>
+
+  <button fab fab-bottom fab-fixed fab-left background (click)="back()">
+    <ion-icon name="undo"></ion-icon>
+  </button>
 </ion-content>
