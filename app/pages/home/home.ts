@@ -8,6 +8,7 @@ import {SdkPage} from "../sdk/sdk";
 import {DataService} from "../../providers/data-service/data-service";
 import {Global} from "../../providers/global/global";
 import {Session} from "../../providers/session/session";
+import {FaqPage} from "../faq/faq";
 
 @Component({
   templateUrl: 'build/pages/home/home.html'
@@ -65,5 +66,9 @@ export class HomePage {
 
   nav2SdkPage() {
     this.nav.parent.parent.push(SdkPage);
+  }
+
+  nav2FaqPage() {
+    this.nav.parent.parent.push(FaqPage);
   }
 }

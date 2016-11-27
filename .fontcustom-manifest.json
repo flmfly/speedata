@@ -1,13 +1,13 @@
 {
   "checksum": {
-    "previous": "3d371fe296dfc80cfb1f8436ed20146bb8e9c34de3094e7b4f9d2ed260c60550",
-    "current": "3d371fe296dfc80cfb1f8436ed20146bb8e9c34de3094e7b4f9d2ed260c60550"
+    "previous": "d311da56e4c4af236d565898c085a63f12f7e52fb8b8619526bba5cbef342cbf",
+    "current": "d311da56e4c4af236d565898c085a63f12f7e52fb8b8619526bba5cbef342cbf"
   },
   "fonts": [
-    "./www/fontcustom/output/icons_3d371fe296dfc80cfb1f8436ed20146b.ttf",
-    "./www/fontcustom/output/icons_3d371fe296dfc80cfb1f8436ed20146b.svg",
-    "./www/fontcustom/output/icons_3d371fe296dfc80cfb1f8436ed20146b.woff",
-    "./www/fontcustom/output/icons_3d371fe296dfc80cfb1f8436ed20146b.eot"
+    "./www/fontcustom/output/icons_d311da56e4c4af236d565898c085a63f.ttf",
+    "./www/fontcustom/output/icons_d311da56e4c4af236d565898c085a63f.svg",
+    "./www/fontcustom/output/icons_d311da56e4c4af236d565898c085a63f.woff",
+    "./www/fontcustom/output/icons_d311da56e4c4af236d565898c085a63f.eot"
   ],
   "glyphs": {
     "ios-assistant": {
@@ -69,6 +69,10 @@
     "ios-explosion": {
       "codepoint": 61705,
       "source": "./fontcustom/input/ios-explosion.svg"
+    },
+    "ios-faq": {
+      "codepoint": 61738,
+      "source": "./fontcustom/input/ios-faq.svg"
     },
     "ios-fingerprint": {
       "codepoint": 61706,

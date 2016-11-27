@@ -59,6 +59,14 @@
 
 @import "../pages/product-category/product-category.scss";
 
+@import "../pages/trade-case/trade-case.scss";
+
+@import "../pages/trade-case-detail/trade-case-detail.scss";
+
+@import "../pages/faq/faq.scss";
+
+@import "../pages/faq-detail/faq-detail.scss";
+
 .border-top-grey {
   border-top: solid 1px #b2b2b2;
 }
@@ -188,4 +196,8 @@ ion-label[stacked] {
 
 a{
   text-decoration:none;
+}
+
+ion-footer{
+  background-color: white;
 }

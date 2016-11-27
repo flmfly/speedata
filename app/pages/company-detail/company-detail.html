@@ -6,13 +6,16 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-toolbar>
     <ion-title>{{c.name}}</ion-title>
-  </ion-navbar>
+  </ion-toolbar>
 
 </ion-header>
 
 
 <ion-content padding>
   <div [innerHTML]="c.content"></div>
+  <button fab fab-bottom fab-fixed fab-left background (click)="navCtrl.pop()">
+    <ion-icon name="undo"></ion-icon>
+  </button>
 </ion-content>

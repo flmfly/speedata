@@ -13,6 +13,8 @@ export class Global {
 
   public static devMode: boolean = false;
   public static rootUrl: string = "http://www.rzwy.com.cn/";
+  // public static devMode: boolean = true;
+  // public static rootUrl: string = "http://o1597847f5.imwork.net/";
   // public static rootUrl: string = "http://127.0.0.1:18080/";
   public static picBaseUrl: string = Global.rootUrl + 'func/api/productcategory/file?fileName=&category=&path=';
 

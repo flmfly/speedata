@@ -6,9 +6,9 @@
 -->
 <!--<ion-header>-->
 
-  <!--<ion-navbar>-->
-    <!--<ion-title>SDK下载</ion-title>-->
-  <!--</ion-navbar>-->
+<!--<ion-navbar>-->
+<!--<ion-title>SDK下载</ion-title>-->
+<!--</ion-navbar>-->
 
 <!--</ion-header>-->
 
@@ -21,16 +21,27 @@
       亲,请选择一个产品型号并留下邮箱。<br>SDK将自动发送到您的邮箱!
     </h6>
   </div>
-
+  <ion-searchbar placeholder="输入产品关键字"
+                 (ionInput)="onInput($event)"
+                 (ionCancel)="onCancel($event)"
+                 showCancelButton="true"
+                 cancelButtonText="取消"></ion-searchbar>
+  <ion-list *ngIf="productListShown" style="margin-bottom: 0">
+    <span ion-item *ngFor="let p of products" (click)="getProductId(p)">
+      {{p.name}}
+    </span>
+  </ion-list>
   <ion-list style="margin-bottom: 16px">
     <ion-item>
-      <ion-label primary stacked>产品型号 <ion-icon name="star"></ion-icon></ion-label>
-      <ion-select [(ngModel)]="productId" placeholder="点击选择产品">
-        <ion-option *ngFor="let p of products" value="{{p.id}}">{{p.name}}</ion-option>
-      </ion-select>
+      <ion-label primary stacked>产品型号
+        <ion-icon name="star"></ion-icon>
+      </ion-label>
+      <ion-input [(ngModel)]="selectedProductName" placeholder="搜索选择产品" disabled></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label primary stacked>邮箱 <ion-icon name="star"></ion-icon></ion-label>
+      <ion-label primary stacked>邮箱
+        <ion-icon name="star"></ion-icon>
+      </ion-label>
       <ion-input placeholder="请填写您的邮箱" [(ngModel)]="email"></ion-input>
     </ion-item>
   </ion-list>
@@ -42,11 +53,11 @@
   </div>
   <div padding style="padding-top: 0">
     <a href="tel:010-52866530">
-    <button block favorite no-margin>
-      <ion-icon name="call-outline"></ion-icon>
-      010-52866530
-    </button>
-      </a>
+      <button block favorite no-margin>
+        <ion-icon name="call-outline"></ion-icon>
+        010-52866530
+      </button>
+    </a>
   </div>
 
   <button fab fab-bottom fab-fixed fab-left background (click)="back()">

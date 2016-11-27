@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {Trade} from "../../model/trade";
+import {ProductListPage} from "../product-list/product-list";
+import {TradeCasePage} from "../trade-case/trade-case";
 
 /*
  Generated class for the TradeDetailPage page.
@@ -21,7 +23,19 @@ export class TradeDetailPage {
     this.trade = this.params.get('trade');
   }
 
-  onPageWillLeave(){
+  onPageWillLeave() {
     this.footerIsShown = false;
+  }
+
+  onPageDidEnter() {
+    this.footerIsShown = true;
+  }
+
+  nav2ProductList() {
+    this.nav.push(ProductListPage, {tId: this.trade.id, trade: true});
+  }
+
+  nav2CaseList() {
+    this.nav.push(TradeCasePage, {tId: this.trade.id});
   }
 }

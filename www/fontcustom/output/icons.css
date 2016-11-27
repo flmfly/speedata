@@ -4,11 +4,11 @@
 
 @font-face {
   font-family: "icons";
-  src: url("./icons_3d371fe296dfc80cfb1f8436ed20146b.eot");
-  src: url("./icons_3d371fe296dfc80cfb1f8436ed20146b.eot?#iefix") format("embedded-opentype"),
-       url("./icons_3d371fe296dfc80cfb1f8436ed20146b.woff") format("woff"),
-       url("./icons_3d371fe296dfc80cfb1f8436ed20146b.ttf") format("truetype"),
-       url("./icons_3d371fe296dfc80cfb1f8436ed20146b.svg#icons") format("svg");
+  src: url("./icons_d311da56e4c4af236d565898c085a63f.eot");
+  src: url("./icons_d311da56e4c4af236d565898c085a63f.eot?#iefix") format("embedded-opentype"),
+       url("./icons_d311da56e4c4af236d565898c085a63f.woff") format("woff"),
+       url("./icons_d311da56e4c4af236d565898c085a63f.ttf") format("truetype"),
+       url("./icons_d311da56e4c4af236d565898c085a63f.svg#icons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -16,7 +16,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "icons";
-    src: url("./icons_3d371fe296dfc80cfb1f8436ed20146b.svg#icons") format("svg");
+    src: url("./icons_d311da56e4c4af236d565898c085a63f.svg#icons") format("svg");
   }
 }
 
@@ -38,6 +38,7 @@
 .ion-ios-enquiry:before,
 .ion-ios-enquiry-outline:before,
 .ion-ios-explosion:before,
+.ion-ios-faq:before,
 .ion-ios-fingerprint:before,
 .ion-ios-infrared:before,
 .ion-ios-kindle:before,
@@ -93,6 +94,7 @@
 .ion-ios-enquiry:before { content: "\f107"; }
 .ion-ios-enquiry-outline:before { content: "\f108"; }
 .ion-ios-explosion:before { content: "\f109"; }
+.ion-ios-faq:before { content: "\f12a"; }
 .ion-ios-fingerprint:before { content: "\f10a"; }
 .ion-ios-infrared:before { content: "\f10b"; }
 .ion-ios-kindle:before { content: "\f120"; }

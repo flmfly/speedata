@@ -25,6 +25,10 @@ export class SdkPage {
 
   private sdkRequestId: number;
 
+  private productListShown: boolean = false;
+
+  private selectedProductName: string = '';
+
   onPageWillEnter() {
     //设置页面标题
     Global.changeTitle("SDK下载");
@@ -108,5 +112,29 @@ export class SdkPage {
   back() {
     Global.changeTitle("思必拓微信商城");
     this.navCtrl.pop();
+  }
+
+  getProductId(p: Product) {
+    this.onCancel(null);
+    this.productId = p.id;
+    this.selectedProductName = p.name;
+  }
+
+  onInput(ev: any) {
+
+    // set val to the value of the searchbar
+    let val = ev.target.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.products = this.products.filter((item) => {
+        return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      });
+      this.productListShown = true;
+    }
+  }
+
+  onCancel(ev: any) {
+    this.productListShown = false;
   }
 }

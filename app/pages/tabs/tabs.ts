@@ -5,7 +5,10 @@ import {ContactPage} from '../contact/contact';
 import {ProductPage} from '../product/product';
 import {EnquiryPage} from '../enquiry/enquiry';
 import {PersonalPage} from "../personal/personal";
+declare class wx {
+  static closeWindow(): any;
 
+}
 @Component({
   templateUrl: 'build/pages/tabs/tabs.html'
 })
@@ -26,5 +29,9 @@ export class TabsPage {
     this.personalRoot = PersonalPage;
     this.productRoot = ProductPage;
     this.enquiryRoot = EnquiryPage;
+  }
+
+  close(){
+    wx.closeWindow();
   }
 }

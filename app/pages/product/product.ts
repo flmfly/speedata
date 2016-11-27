@@ -33,17 +33,26 @@ export class ProductPage {
         let i = 0;
         for (; i < list.length;) {
           let tempArray: ProductCategory[] = [];
+
+          let picUrl = Global.blankPic;
+          if (list[i].attachment.length > 0) {
+            picUrl = Global.picBaseUrl + list[i].attachment[0].url;
+          }
           tempArray.push({
             name: list[i].name,
             id: list[i].id,
-            picUrl: Global.picBaseUrl + list[i].attachment[0].url || ''
+            picUrl: picUrl
           });
           i++;
+          picUrl = Global.blankPic;
+          if (list[i].attachment.length > 0) {
+            picUrl = Global.picBaseUrl + list[i].attachment[0].url;
+          }
           if (i < list.length) {
             tempArray.push({
               name: list[i].name,
               id: list[i].id,
-              picUrl: Global.picBaseUrl + list[i].attachment[0].url || ''
+              picUrl: picUrl
             });
             i++;
           }

@@ -4,28 +4,22 @@
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>{{trade.name}}</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
 <ion-content padding>
   <div [innerHTML]="trade.content"></div>
+  <button fab fab-bottom fab-fixed fab-left background (click)="nav.pop()" style="margin-bottom: 36px;">
+    <ion-icon name="undo"></ion-icon>
+  </button>
 </ion-content>
 
 <ion-footer *ngIf="footerIsShown">
-  <ion-row no-padding class="border-top-grey">
+  <ion-row no-padding>
     <ion-col width-50 no-padding>
-      <button clear full no-margin>
+      <button clear full no-margin class="border-top-grey" (click)="nav2ProductList();">
         推荐型号
       </button>
     </ion-col>
     <ion-col width-50 no-padding>
-      <button clear full no-margin>
+      <button favorite full no-margin (click)="nav2CaseList();">
         成功案例
       </button>
     </ion-col>

@@ -33,6 +33,24 @@ export class DataService {
     //   );
   }
 
+  public tradeproduct(query: any): Observable<any> {
+    let headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+    return this.http
+      .post(Global.rootUrl + 'shop/tradeproduct', JSON.stringify(query), {headers: headers})
+      .map(res => res.json());
+  }
+
+  public tradecase(query: any): Observable<any> {
+    let headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+    return this.http
+      .post(Global.rootUrl + 'shop/tradecase', JSON.stringify(query), {headers: headers})
+      .map(res => res.json());
+  }
+
   public select(query: any): Observable<any> {
     let headers = new Headers({
       'Content-Type': 'application/json'
